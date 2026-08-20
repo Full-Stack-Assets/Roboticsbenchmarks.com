@@ -1,0 +1,34 @@
+openapi: 3.1.0
+info:
+  title: RoboticsBenchmarks.com API
+  version: 1.0.0-draft
+  description: Versioned read and contribution contracts. Draft specification; no production publication authority.
+paths:
+  /api/v1/benchmarks:
+    get:
+      operationId: listBenchmarks
+      parameters:
+        - { name: q, in: query, schema: { type: string, maxLength: 200 } }
+        - { name: domain, in: query, schema: { type: array, items: { enum: [manipulation, navigation, locomotion, compute, multi, other] } } }
+        - { name: setting, in: query, schema: { type: array, items: { enum: [simulation, real_robot, compute, hybrid] } } }
+        - { name: sort, in: query, schema: { enum: [verified_desc, name_asc, name_desc] } }
+        - { name: page, in: query, schema: { type: integer, minimum: 1 } }
+      responses:
+        "200": { description: Published non-demo benchmark revisions }
+        "400": { description: Safe validation problem }
+  /api/v1/benchmarks/{slug}:
+    get:
+      operationId: getBenchmark
+      parameters:
+        - { name: slug, in: path, required: true, schema: { type: string } }
+      responses:
+        "200": { description: Published benchmark detail }
+        "404": { description: Unknown benchmark }
+  /api/v1/contributions:
+    post:
+      operationId: createContribution
+      description: Creates a pending review submission only.
+      responses:
+        "201": { description: Pending submission created }
+        "400": { description: Safe validation problem }
+        "429": { description: Rate limited }
