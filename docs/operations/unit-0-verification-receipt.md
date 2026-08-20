@@ -16,7 +16,7 @@ State: Locally implemented and verified; no GitHub commit, push, pull request, d
 | Canonical 10-record seed | `6fbfafc73960ebd8ddfcd6dde4d51c7427e49cfccac2694ebe78a201c8964a42` |
 | Accepted engineering backlog | `ad06c59cf215c8bd280154cc9fb8704c9b6f5b4dfe10f2300b313c2eb89b31ad` |
 | Social preview asset | `f236de0b766f44c1010b57df3b3e3f3db2de2ae297e591e122f1f9a37f64227f` |
-| Dependency lockfile | `283dbdf55081ff6e460baff80764f39f722f13a0720e1a5fa13153ea877051a5` |
+| Dependency lockfile | `72e9a1776b48e93ff914f3b6819e9a1d14042ec665c3ec6ae39148a8e0b6c714` |
 
 The seed remains draft-only. No metric, ranking, traffic, leaderboard, or outcome data was introduced.
 
@@ -40,8 +40,9 @@ The seed remains draft-only. No metric, ranking, traffic, leaderboard, or outcom
 - contract tests: 4 passed, including two adverse fixtures;
 - production build: passed for `/`, `/benchmarks`, and `/benchmarks/:slug`;
 - rendered HTML identity test: passed.
+- dependency audit: zero high or critical findings; four moderate findings remain in the development-only `drizzle-kit` loader chain, for which npm offers only a breaking downgrade.
 
-Two additional clean builds completed without changing any source file or the lockfile. Source-tree SHA-256 remained `29d5e80b271d1985e425a922ee0b25a1086fc585ca9db8a39fc4c2162ea016e4` across both builds. The Vinext runtime deliberately injects a fresh draft-mode secret per build, so compiled server bytes are not treated as a reproducibility invariant.
+Two additional clean builds completed without changing any source file or the lockfile. The Vinext runtime deliberately injects a fresh draft-mode secret per build, so compiled server bytes are not treated as a reproducibility invariant.
 
 ## Human Authority gates still closed
 
