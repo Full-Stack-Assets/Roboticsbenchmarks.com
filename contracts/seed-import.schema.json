@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roboticsbenchmarks.com/schemas/seed-import-v1.json",
+  "title": "RoboticsBenchmarks draft seed import",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_id", "schema_version", "evidence_cutoff", "generated_at", "source_packet", "import_contract", "records", "sources"],
+  "properties": {
+    "schema_id": { "const": "roboticsbenchmarks.seed/v1" },
+    "schema_version": { "const": "1.0.0" },
+    "evidence_cutoff": { "type": "string", "format": "date" },
+    "generated_at": { "type": "string" },
+    "source_packet": { "type": "object" },
+    "import_contract": { "type": "object" },
+    "records": { "type": "array", "minItems": 10, "maxItems": 10, "items": { "type": "object", "required": ["slug", "canonical_name", "publication_status", "is_demo", "source_ids" ] } },
+    "sources": { "type": "array", "minItems": 40, "maxItems": 40, "items": { "type": "object", "required": ["id", "url"] } }
+  }
+}

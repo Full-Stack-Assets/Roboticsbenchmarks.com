@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - run: npm ci
+      - run: npm run contracts:validate
+      - run: npm run boundaries:verify
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - name: Secret-pattern gate
+        shell: bash
+        run: |
+          if git grep -nE '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|gh[pousr]_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9]{20,})' -- ':!package-lock.json'; then
+            echo 'Potential secret material detected.' >&2
+            exit 1
+          fi
+      - name: Dependency audit
+        run: npm audit --audit-level=high

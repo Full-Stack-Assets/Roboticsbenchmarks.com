@@ -1,0 +1,490 @@
+{
+  "schema_id": "roboticsbenchmarks.seed/v1",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-20T08:51:45Z",
+  "evidence_cutoff": "2026-08-20",
+  "source_packet": {
+    "file_name": "RoboticsBenchmarks.com_MVP_Product_Specification.docx",
+    "sha256": "e7c7496bd618afe8095e8561993cdec6775fc9cd80f0a784fda8e221c0fa7f48",
+    "canonical_sections": ["10", "11", "12", "17", "25", "29", "30", "Appendix A"]
+  },
+  "import_contract": {
+    "mode": "draft_only",
+    "is_demo_default": false,
+    "publication_status_default": "draft",
+    "requires_claim_source_binding": true,
+    "requires_launch_day_url_check": true,
+    "requires_human_approval_to_publish": true,
+    "forbid_unscoped_metrics": true,
+    "forbid_composite_rankings": true,
+    "on_validation_error": "abort_entire_import"
+  },
+  "records": [
+    {
+      "slug": "open-x-embodiment",
+      "canonical_name": "Open X-Embodiment",
+      "entity_kind": "dataset_resource",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["real_robot"],
+      "scope_summary": "Open dataset collection and RT-X cross-embodiment research ecosystem; it is not one fixed benchmark.",
+      "primary_metric_summary": {
+        "state": "not_defined",
+        "name": null,
+        "note": "RT-X experimental success rates belong to named protocols and must not be displayed as a universal Open X-Embodiment score."
+      },
+      "official_url": "https://robotics-transformer-x.github.io/",
+      "paper_url": "https://arxiv.org/abs/2310.08864",
+      "code_url": "https://github.com/google-deepmind/open_x_embodiment",
+      "verification_state": "verified",
+      "verification_note": "Identity and scope are verified; current lifecycle remains unknown without a current official release statement.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S01", "S02", "S03"],
+      "claims": [
+        {
+          "claim_key": "identity",
+          "value": "Dataset/resource and cross-embodiment research ecosystem, not a single benchmark.",
+          "source_ids": ["S01", "S02"]
+        },
+        {
+          "claim_key": "scope",
+          "value": "Official materials describe more than one million real-robot trajectories across 22 embodiments, pooled from 60 datasets and 34 labs.",
+          "source_ids": ["S01", "S02"]
+        }
+      ]
+    },
+    {
+      "slug": "libero",
+      "canonical_name": "LIBERO",
+      "entity_kind": "benchmark_suite",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["simulation"],
+      "scope_summary": "Lifelong robot-learning benchmark with four suites and 130 tasks.",
+      "primary_metric_summary": {
+        "state": "defined",
+        "metric_id": "met_libero_fwt",
+        "name": "Forward Transfer",
+        "protocol_id": "pro_libero_lifelong_default",
+        "direction": "higher_is_better"
+      },
+      "other_metrics": [
+        {
+          "metric_id": "met_libero_nbt",
+          "name": "Negative Backward Transfer",
+          "protocol_id": "pro_libero_lifelong_default",
+          "direction": "lower_is_better"
+        },
+        {
+          "metric_id": "met_libero_auc",
+          "name": "Area under the success-learning sequence",
+          "protocol_id": "pro_libero_lifelong_default",
+          "direction": "higher_is_better"
+        }
+      ],
+      "official_url": "https://libero-project.github.io/main.html",
+      "paper_url": "https://arxiv.org/abs/2306.03310",
+      "code_url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "verification_state": "verified",
+      "verification_note": "Store paper revision, repository/data version, task order, and checkpoint protocol with results.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S04", "S05", "S06"],
+      "claims": [
+        {
+          "claim_key": "identity",
+          "value": "Lifelong robot-learning benchmark for knowledge transfer.",
+          "source_ids": ["S04", "S05"]
+        },
+        {
+          "claim_key": "scope",
+          "value": "Four suites and 130 tasks: LIBERO-Spatial, LIBERO-Object, LIBERO-Goal, and LIBERO-100.",
+          "source_ids": ["S05"]
+        },
+        {
+          "claim_key": "metrics",
+          "value": "Forward Transfer, Negative Backward Transfer, and area under the success-learning sequence under the declared lifelong-learning protocol.",
+          "source_ids": ["S05"]
+        }
+      ]
+    },
+    {
+      "slug": "rlbench",
+      "canonical_name": "RLBench",
+      "entity_kind": "benchmark_suite",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["simulation"],
+      "scope_summary": "Robot-learning benchmark and environment with 100 hand-designed tasks, variations, demonstrations, and multimodal observations.",
+      "primary_metric_summary": {
+        "state": "defined",
+        "metric_id": "met_rlbench_task_success_rate",
+        "name": "Task success rate",
+        "protocol_id": "pro_rlbench_declared_task_set",
+        "direction": "higher_is_better",
+        "note": "No protocol-independent RLBench score exists."
+      },
+      "official_url": "https://sites.google.com/view/rlbench",
+      "paper_url": "https://arxiv.org/abs/1909.12271",
+      "code_url": "https://github.com/stepjam/RLBench",
+      "verification_state": "verified",
+      "verification_note": "Classification and metric are verified; maintenance recency is tracked separately.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S07", "S08", "S09"],
+      "claims": [
+        {
+          "claim_key": "scope",
+          "value": "Official materials describe 100 hand-designed tasks with variations, motion-planned demonstrations, and multimodal observations.",
+          "source_ids": ["S07", "S08"]
+        },
+        {
+          "claim_key": "metric",
+          "value": "Sparse task completion is aggregated as task success rate under a declared task set and protocol.",
+          "source_ids": ["S08", "S09"]
+        }
+      ]
+    },
+    {
+      "slug": "robotperf",
+      "canonical_name": "RobotPerf",
+      "entity_kind": "benchmark_suite",
+      "primary_domain": "systems_compute",
+      "evaluation_settings": ["compute_only"],
+      "scope_summary": "Open reference robotics-computing benchmark suite using ROS 2 as a common baseline across multiple workload and hardware categories.",
+      "primary_metric_summary": {
+        "state": "multiple",
+        "name": null,
+        "note": "RobotPerf has workload-specific measures and no scalar global score."
+      },
+      "other_metrics": [
+        {"name": "Latency", "protocol_scope": "workload_specific"},
+        {"name": "Reaction time", "protocol_scope": "workload_specific"},
+        {"name": "Throughput or bandwidth", "protocol_scope": "workload_specific"},
+        {"name": "Power", "protocol_scope": "workload_specific"},
+        {"name": "Performance per watt", "protocol_scope": "workload_specific"},
+        {"name": "Memory", "protocol_scope": "workload_specific"}
+      ],
+      "official_url": "https://robotperf.net/",
+      "paper_url": "https://arxiv.org/abs/2309.09212",
+      "code_url": "https://github.com/robotperf/benchmarks",
+      "metric_spec_url": "https://github.com/robotperf/benchmarks/blob/main/benchmarks/README.md",
+      "verification_state": "verified",
+      "verification_note": "Each metric must preserve the applicable workload, unit, and measurement method.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S10", "S11", "S12", "S13"],
+      "claims": [
+        {
+          "claim_key": "identity",
+          "value": "Open reference robotics-computing benchmark suite using ROS 2 as a common baseline.",
+          "source_ids": ["S10", "S11"]
+        },
+        {
+          "claim_key": "metric_model",
+          "value": "Metrics are workload-specific; no global scalar score is defined.",
+          "source_ids": ["S12", "S13"]
+        }
+      ]
+    },
+    {
+      "slug": "robochallenge-table30",
+      "canonical_name": "RoboChallenge Table30",
+      "aliases": ["RoboChallenge", "Table30"],
+      "entity_kind": "challenge",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["real_robot"],
+      "scope_summary": "Real-robot tabletop benchmark suite on the RoboChallenge.ai evaluation platform; Table30v2 is modeled as a versioned child.",
+      "primary_metric_summary": {
+        "state": "defined",
+        "metric_id": "met_table30_task_success_rate",
+        "name": "End-to-end task success rate",
+        "protocol_id": "pro_table30_original",
+        "direction": "higher_is_better"
+      },
+      "other_metrics": [
+        {
+          "metric_id": "met_table30_staged_progress",
+          "name": "Staged progress score",
+          "protocol_id": "pro_table30_original",
+          "direction": "higher_is_better"
+        }
+      ],
+      "official_url": "https://robochallenge.ai/",
+      "challenges_url": "https://robochallenge.ai/challenges",
+      "paper_url": "https://arxiv.org/abs/2510.17950",
+      "code_url": "https://github.com/RoboChallenge/RoboChallengeInference",
+      "data_url": "https://huggingface.co/datasets/RoboChallenge/Table30v2",
+      "verification_state": "verified",
+      "verification_note": "Canonicalized from the ambiguous bare name RoboChallenge; alias search must disambiguate unrelated competitions.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S14", "S15", "S16", "S17", "S18"],
+      "claims": [
+        {
+          "claim_key": "identity",
+          "value": "RoboChallenge.ai is the platform; Table30 is the real-robot benchmark suite.",
+          "source_ids": ["S14", "S15", "S16"]
+        },
+        {
+          "claim_key": "scope",
+          "value": "The original paper describes 30 tabletop tasks and a fleet of ten robots across four robot types.",
+          "source_ids": ["S16"]
+        },
+        {
+          "claim_key": "metrics",
+          "value": "The original protocol defines end-to-end task success and a staged progress score.",
+          "source_ids": ["S16"]
+        }
+      ]
+    },
+    {
+      "slug": "habitat",
+      "canonical_name": "Habitat",
+      "entity_kind": "platform_framework",
+      "primary_domain": "multi_domain",
+      "evaluation_settings": ["simulation"],
+      "scope_summary": "Simulation ecosystem supporting navigation, rearrangement, instruction following, embodied question answering, and related challenge families.",
+      "primary_metric_summary": {
+        "state": "not_defined",
+        "name": null,
+        "note": "Metrics belong to named child tasks and protocols; do not display a platform-wide score."
+      },
+      "official_url": "https://aihabitat.org/",
+      "paper_url": "https://arxiv.org/abs/1904.01201",
+      "code_url": "https://github.com/facebookresearch/habitat-lab",
+      "secondary_code_url": "https://github.com/facebookresearch/habitat-sim",
+      "verification_state": "verified",
+      "verification_note": "Publish as a parent platform record and link child tasks or challenges when added.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S19", "S20", "S21", "S22"],
+      "claims": [
+        {
+          "claim_key": "identity",
+          "value": "Habitat is a simulation platform and ecosystem rather than one benchmark.",
+          "source_ids": ["S19", "S20"]
+        },
+        {
+          "claim_key": "metric_model",
+          "value": "Metrics such as Success and SPL belong to named child navigation protocols, not to Habitat globally.",
+          "source_ids": ["S20", "S21"]
+        }
+      ]
+    },
+    {
+      "slug": "maniskill-3",
+      "canonical_name": "ManiSkill 3",
+      "entity_kind": "platform_framework",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["simulation"],
+      "scope_summary": "Current simulation and training framework and benchmark ecosystem; ManiSkill generations are materially distinct and must be versioned.",
+      "primary_metric_summary": {
+        "state": "multiple",
+        "name": null,
+        "note": "Episode measures are versioned; no unversioned result may be labeled a ManiSkill score."
+      },
+      "other_metrics": [
+        {"name": "success_once", "protocol_scope": "versioned_episode"},
+        {"name": "success_at_end", "protocol_scope": "versioned_episode"},
+        {"name": "fail_once", "protocol_scope": "versioned_episode"},
+        {"name": "fail_at_end", "protocol_scope": "versioned_episode"},
+        {"name": "Episode return", "protocol_scope": "versioned_episode"}
+      ],
+      "official_url": "https://www.maniskill.ai/",
+      "documentation_url": "https://maniskill.readthedocs.io/",
+      "paper_url": "https://arxiv.org/abs/2410.00425",
+      "version_context_paper_url": "https://arxiv.org/abs/2302.04659",
+      "code_url": "https://github.com/haosulab/ManiSkill",
+      "verification_state": "verified",
+      "verification_note": "Every result must identify the ManiSkill generation, package version, task, and evaluation configuration.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S23", "S24", "S25", "S26", "S27"],
+      "claims": [
+        {
+          "claim_key": "identity",
+          "value": "ManiSkill 3 is the current simulation/training framework and benchmark ecosystem; earlier generations are materially distinct.",
+          "source_ids": ["S23", "S25", "S26", "S27"]
+        },
+        {
+          "claim_key": "scope",
+          "value": "The current paper reports 12 task domains, more than 20 robot embodiments, and large demonstration corpora.",
+          "source_ids": ["S25"]
+        }
+      ]
+    },
+    {
+      "slug": "meta-world",
+      "canonical_name": "Meta-World",
+      "entity_kind": "benchmark_suite",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["simulation"],
+      "scope_summary": "Multi-task and meta-reinforcement-learning benchmark suite with versioned MT and ML protocols.",
+      "primary_metric_summary": {
+        "state": "defined",
+        "metric_id": "met_metaworld_average_success",
+        "name": "Average task success rate",
+        "protocol_id": "pro_metaworld_declared_mt_or_ml",
+        "direction": "higher_is_better"
+      },
+      "other_metrics": [
+        {"name": "Mean return", "protocol_scope": "supplementary"}
+      ],
+      "official_url": "https://metaworld.farama.org/",
+      "paper_url": "https://proceedings.mlr.press/v100/yu20a.html",
+      "generation_context_paper_url": "https://openreview.net/forum?id=1de3azE606",
+      "code_url": "https://github.com/Farama-Foundation/Metaworld",
+      "verification_state": "verified",
+      "verification_note": "Store MT or ML protocol, task split, goals, adaptation procedure, package version, and generation.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S28", "S29", "S30", "S31"],
+      "claims": [
+        {
+          "claim_key": "scope",
+          "value": "Current official materials expose 50 tasks with MT1, MT10, MT50, ML1, ML10, and ML45 protocols.",
+          "source_ids": ["S28", "S29", "S30"]
+        },
+        {
+          "claim_key": "metric",
+          "value": "Binary task success is aggregated across declared tasks and episodes; mean return is supplementary.",
+          "source_ids": ["S28", "S29"]
+        }
+      ]
+    },
+    {
+      "slug": "calvin",
+      "canonical_name": "CALVIN",
+      "entity_kind": "benchmark_suite",
+      "primary_domain": "manipulation",
+      "evaluation_settings": ["simulation"],
+      "scope_summary": "Simulated benchmark, environment, dataset, and challenge for long-horizon language-conditioned control.",
+      "primary_metric_summary": {
+        "state": "multiple",
+        "name": null,
+        "note": "Per-task success and long-horizon sequence completion are reported under the declared split and protocol."
+      },
+      "other_metrics": [
+        {"name": "Per-task success", "protocol_scope": "declared_task_set"},
+        {"name": "Sequential instruction completion percentages", "protocol_scope": "long_horizon_chain"}
+      ],
+      "official_url": "https://calvin.cs.uni-freiburg.de/",
+      "paper_url": "https://arxiv.org/abs/2112.03227",
+      "code_url": "https://github.com/mees/calvin",
+      "verification_state": "potentially_stale",
+      "verification_note": "The official project site failed retrieval on 2026-08-20 and the official repository reports dataset/site connection failures. Reverify availability and checksum before publication.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S32", "S33", "S34"],
+      "claims": [
+        {
+          "claim_key": "scope",
+          "value": "Official materials describe 34 tasks across environments A-D, approximately 24 hours of teleoperated play, approximately 2.4 million interaction steps, and 1,000 five-instruction evaluation chains.",
+          "source_ids": ["S33"]
+        },
+        {
+          "claim_key": "health_state",
+          "value": "The project requires launch-day availability and checksum re-verification before publication.",
+          "source_ids": ["S32", "S34"]
+        }
+      ]
+    },
+    {
+      "slug": "barn-challenge-2026",
+      "canonical_name": "BARN Challenge 2026",
+      "entity_kind": "challenge",
+      "primary_domain": "navigation",
+      "evaluation_settings": ["hybrid"],
+      "scope_summary": "Annual navigation challenge using hidden BARN simulations and physical finals; the underlying BARN dataset is a related but distinct entity.",
+      "challenge_year": 2026,
+      "protocol_name": "ICRA 2026 BARN Challenge",
+      "primary_metric_summary": {
+        "state": "defined",
+        "metric_id": "met_barn_2026_sim_trial_score",
+        "name": "Simulation trial score",
+        "protocol_id": "pro_barn_2026_simulation_stage",
+        "direction": "higher_is_better"
+      },
+      "protocol_stages": [
+        {"protocol_id": "pro_barn_2026_simulation_stage", "setting": "simulation"},
+        {"protocol_id": "pro_barn_2026_physical_final", "setting": "real_robot"}
+      ],
+      "official_url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge26.html",
+      "dataset_url": "https://people.cs.gmu.edu/~xiao/Research/BARN/BARN.html",
+      "paper_url": "https://arxiv.org/abs/2008.13315",
+      "report_url": "https://people.cs.gmu.edu/~xiao/papers/barn26_report.pdf",
+      "code_urls": [
+        "https://github.com/Saadmaghani/The-Barn-Challenge-Ros2",
+        "https://github.com/Daffan/the-barn-challenge"
+      ],
+      "verification_state": "verified",
+      "verification_note": "Challenge year is mandatory because scoring constants and rules may change; physical-final rules are a separate protocol.",
+      "source_verified_on": "2026-08-20",
+      "publication_status": "draft",
+      "is_demo": false,
+      "source_ids": ["S35", "S36", "S37", "S38", "S39", "S40"],
+      "claims": [
+        {
+          "claim_key": "scope",
+          "value": "BARN provides 300 generated 5 m by 5 m environments; the 2026 challenge used 50 hidden simulation environments and physical finals with a Clearpath Jackal.",
+          "source_ids": ["S35", "S36", "S38"]
+        },
+        {
+          "claim_key": "metric",
+          "value": "The simulation trial score uses a success indicator and time normalization under year-specific constants; physical-final success and traversal time remain separate.",
+          "source_ids": ["S35", "S38"]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {"id": "S01", "entity_slug": "open-x-embodiment", "source_type": "official_project", "url": "https://robotics-transformer-x.github.io/", "retrieved_on": "2026-08-20"},
+    {"id": "S02", "entity_slug": "open-x-embodiment", "source_type": "original_paper", "url": "https://arxiv.org/abs/2310.08864", "retrieved_on": "2026-08-20"},
+    {"id": "S03", "entity_slug": "open-x-embodiment", "source_type": "official_repository", "url": "https://github.com/google-deepmind/open_x_embodiment", "retrieved_on": "2026-08-20"},
+    {"id": "S04", "entity_slug": "libero", "source_type": "official_project", "url": "https://libero-project.github.io/main.html", "retrieved_on": "2026-08-20"},
+    {"id": "S05", "entity_slug": "libero", "source_type": "original_paper", "url": "https://arxiv.org/abs/2306.03310", "retrieved_on": "2026-08-20"},
+    {"id": "S06", "entity_slug": "libero", "source_type": "official_repository", "url": "https://github.com/Lifelong-Robot-Learning/LIBERO", "retrieved_on": "2026-08-20"},
+    {"id": "S07", "entity_slug": "rlbench", "source_type": "official_project", "url": "https://sites.google.com/view/rlbench", "retrieved_on": "2026-08-20"},
+    {"id": "S08", "entity_slug": "rlbench", "source_type": "original_paper", "url": "https://arxiv.org/abs/1909.12271", "retrieved_on": "2026-08-20"},
+    {"id": "S09", "entity_slug": "rlbench", "source_type": "official_repository", "url": "https://github.com/stepjam/RLBench", "retrieved_on": "2026-08-20"},
+    {"id": "S10", "entity_slug": "robotperf", "source_type": "official_project", "url": "https://robotperf.net/", "retrieved_on": "2026-08-20"},
+    {"id": "S11", "entity_slug": "robotperf", "source_type": "original_paper", "url": "https://arxiv.org/abs/2309.09212", "retrieved_on": "2026-08-20"},
+    {"id": "S12", "entity_slug": "robotperf", "source_type": "official_repository", "url": "https://github.com/robotperf/benchmarks", "retrieved_on": "2026-08-20"},
+    {"id": "S13", "entity_slug": "robotperf", "source_type": "official_metric_specification", "url": "https://github.com/robotperf/benchmarks/blob/main/benchmarks/README.md", "retrieved_on": "2026-08-20"},
+    {"id": "S14", "entity_slug": "robochallenge-table30", "source_type": "official_platform", "url": "https://robochallenge.ai/", "retrieved_on": "2026-08-20"},
+    {"id": "S15", "entity_slug": "robochallenge-table30", "source_type": "official_challenges_page", "url": "https://robochallenge.ai/challenges", "retrieved_on": "2026-08-20"},
+    {"id": "S16", "entity_slug": "robochallenge-table30", "source_type": "original_paper", "url": "https://arxiv.org/abs/2510.17950", "retrieved_on": "2026-08-20"},
+    {"id": "S17", "entity_slug": "robochallenge-table30", "source_type": "official_repository", "url": "https://github.com/RoboChallenge/RoboChallengeInference", "retrieved_on": "2026-08-20"},
+    {"id": "S18", "entity_slug": "robochallenge-table30", "source_type": "official_dataset", "url": "https://huggingface.co/datasets/RoboChallenge/Table30v2", "retrieved_on": "2026-08-20"},
+    {"id": "S19", "entity_slug": "habitat", "source_type": "official_project", "url": "https://aihabitat.org/", "retrieved_on": "2026-08-20"},
+    {"id": "S20", "entity_slug": "habitat", "source_type": "original_paper", "url": "https://arxiv.org/abs/1904.01201", "retrieved_on": "2026-08-20"},
+    {"id": "S21", "entity_slug": "habitat", "source_type": "official_repository", "url": "https://github.com/facebookresearch/habitat-lab", "retrieved_on": "2026-08-20"},
+    {"id": "S22", "entity_slug": "habitat", "source_type": "official_repository", "url": "https://github.com/facebookresearch/habitat-sim", "retrieved_on": "2026-08-20"},
+    {"id": "S23", "entity_slug": "maniskill-3", "source_type": "official_project", "url": "https://www.maniskill.ai/", "retrieved_on": "2026-08-20"},
+    {"id": "S24", "entity_slug": "maniskill-3", "source_type": "official_documentation", "url": "https://maniskill.readthedocs.io/", "retrieved_on": "2026-08-20"},
+    {"id": "S25", "entity_slug": "maniskill-3", "source_type": "original_paper", "url": "https://arxiv.org/abs/2410.00425", "retrieved_on": "2026-08-20"},
+    {"id": "S26", "entity_slug": "maniskill-3", "source_type": "generation_context_paper", "url": "https://arxiv.org/abs/2302.04659", "retrieved_on": "2026-08-20"},
+    {"id": "S27", "entity_slug": "maniskill-3", "source_type": "official_repository", "url": "https://github.com/haosulab/ManiSkill", "retrieved_on": "2026-08-20"},
+    {"id": "S28", "entity_slug": "meta-world", "source_type": "official_documentation", "url": "https://metaworld.farama.org/", "retrieved_on": "2026-08-20"},
+    {"id": "S29", "entity_slug": "meta-world", "source_type": "original_paper", "url": "https://proceedings.mlr.press/v100/yu20a.html", "retrieved_on": "2026-08-20"},
+    {"id": "S30", "entity_slug": "meta-world", "source_type": "generation_context_paper", "url": "https://openreview.net/forum?id=1de3azE606", "retrieved_on": "2026-08-20"},
+    {"id": "S31", "entity_slug": "meta-world", "source_type": "official_repository", "url": "https://github.com/Farama-Foundation/Metaworld", "retrieved_on": "2026-08-20"},
+    {"id": "S32", "entity_slug": "calvin", "source_type": "official_project", "url": "https://calvin.cs.uni-freiburg.de/", "retrieved_on": "2026-08-20", "retrieval_state": "failed"},
+    {"id": "S33", "entity_slug": "calvin", "source_type": "original_paper", "url": "https://arxiv.org/abs/2112.03227", "retrieved_on": "2026-08-20"},
+    {"id": "S34", "entity_slug": "calvin", "source_type": "official_repository", "url": "https://github.com/mees/calvin", "retrieved_on": "2026-08-20"},
+    {"id": "S35", "entity_slug": "barn-challenge-2026", "source_type": "official_organizer_page", "url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge26.html", "retrieved_on": "2026-08-20"},
+    {"id": "S36", "entity_slug": "barn-challenge-2026", "source_type": "official_dataset_page", "url": "https://people.cs.gmu.edu/~xiao/Research/BARN/BARN.html", "retrieved_on": "2026-08-20"},
+    {"id": "S37", "entity_slug": "barn-challenge-2026", "source_type": "original_paper", "url": "https://arxiv.org/abs/2008.13315", "retrieved_on": "2026-08-20"},
+    {"id": "S38", "entity_slug": "barn-challenge-2026", "source_type": "official_report", "url": "https://people.cs.gmu.edu/~xiao/papers/barn26_report.pdf", "retrieved_on": "2026-08-20"},
+    {"id": "S39", "entity_slug": "barn-challenge-2026", "source_type": "organizer_linked_repository", "url": "https://github.com/Saadmaghani/The-Barn-Challenge-Ros2", "retrieved_on": "2026-08-20"},
+    {"id": "S40", "entity_slug": "barn-challenge-2026", "source_type": "organizer_linked_repository", "url": "https://github.com/Daffan/the-barn-challenge", "retrieved_on": "2026-08-20"}
+  ]
+}

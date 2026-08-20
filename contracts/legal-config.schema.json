@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roboticsbenchmarks.com/schemas/legal-config-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["operator_name", "contact_email", "jurisdiction", "effective_date", "processors", "retention"],
+  "properties": {
+    "operator_name": { "type": "string", "minLength": 1 },
+    "contact_email": { "type": "string", "format": "email" },
+    "jurisdiction": { "type": "string", "minLength": 1 },
+    "effective_date": { "type": "string", "format": "date" },
+    "processors": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["name", "purpose", "data_categories"], "properties": { "name": { "type": "string" }, "purpose": { "type": "string" }, "data_categories": { "type": "array", "items": { "type": "string" } } } } },
+    "retention": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["record_type", "period", "deletion_behavior"], "properties": { "record_type": { "type": "string" }, "period": { "type": "string" }, "deletion_behavior": { "type": "string" } } } }
+  }
+}

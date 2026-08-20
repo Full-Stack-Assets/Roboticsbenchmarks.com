@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roboticsbenchmarks.com/schemas/benchmark-public-v1.json",
+  "title": "RoboticsBenchmarks public benchmark view model",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slug", "canonical_name", "entity_kind", "primary_domain", "evaluation_settings", "scope_summary", "metric_summary", "verification_state", "source_verified_on", "is_demo"],
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "canonical_name": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "entity_kind": { "enum": ["benchmark", "benchmark_family", "dataset_resource", "evaluation_platform", "challenge_competition", "compute_benchmark"] },
+    "primary_domain": { "enum": ["manipulation", "navigation", "locomotion", "compute", "multi", "other"] },
+    "evaluation_settings": { "type": "array", "minItems": 1, "items": { "enum": ["simulation", "real_robot", "compute", "hybrid"] }, "uniqueItems": true },
+    "scope_summary": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "metric_summary": { "$ref": "#/$defs/metricSummary" },
+    "verification_state": { "enum": ["unverified", "partially_verified", "verified", "potentially_stale", "disputed"] },
+    "source_verified_on": { "type": ["string", "null"], "format": "date" },
+    "is_demo": { "type": "boolean" }
+  },
+  "$defs": {
+    "metricSummary": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["state", "name"], "properties": { "state": { "const": "defined" }, "name": { "type": "string", "minLength": 1 }, "note": { "type": ["string", "null"] } } },
+        { "type": "object", "additionalProperties": false, "required": ["state", "name"], "properties": { "state": { "enum": ["unknown", "not_applicable", "not_defined", "not_verified"] }, "name": { "type": "null" }, "note": { "type": ["string", "null"] } } }
+      ]
+    }
+  }
+}

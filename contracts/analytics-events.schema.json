@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://roboticsbenchmarks.com/schemas/analytics-events-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event", "properties"],
+  "properties": {
+    "event": { "enum": ["page_view", "registry_viewed", "filter_applied", "filter_cleared", "sort_changed", "benchmark_opened", "source_opened", "category_opened", "guide_completed", "contribution_submitted", "alert_subscription_started"] },
+    "properties": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "route_template": { "type": "string", "maxLength": 100 },
+        "benchmark_public_id": { "type": "string", "maxLength": 80 },
+        "category": { "enum": ["manipulation", "navigation", "locomotion", "compute", "multi", "other"] },
+        "filter_name": { "enum": ["domain", "setting", "entity_kind", "verification"] },
+        "filter_value": { "type": "string", "maxLength": 60 },
+        "result_count_bucket": { "enum": ["0", "1-5", "6-10", "11-25", "26+"] }
+      }
+    }
+  }
+}
