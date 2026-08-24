@@ -3,6 +3,7 @@ import test from "node:test";
 import { readFile } from "node:fs/promises";
 
 const seed = JSON.parse(await readFile(new URL("../canon/roboticsbenchmarks_seed_v1.json", import.meta.url), "utf8"));
+const schemaSource = await readFile(new URL("../db/schema.ts", import.meta.url), "utf8");
 
 const validateSeedBoundary = (candidate) => {
   assert.equal(candidate.records.length, 10);
@@ -32,4 +33,33 @@ test("rejects a fixture with a missing provenance source", () => {
   invalid.sources = invalid.sources.filter((source) => source.id !== invalid.records[0].source_ids[0]);
   invalid.sources.push({ ...invalid.sources[0], id: "fixture-source" });
   assert.throws(() => validateSeedBoundary(invalid));
+});
+
+test("Unit 1 schema declares the core benchmark and provenance tables", () => {
+  for (const exportName of [
+    "benchmarks",
+    "categories",
+    "benchmarkCategories",
+    "benchmarkSettings",
+    "entityAliases",
+    "organizations",
+    "entityMaintainers",
+    "embodiments",
+    "benchmarkEmbodiments",
+    "accessArtifacts",
+    "benchmarkVersions",
+    "evaluationProtocols",
+    "metricDefinitions",
+    "sources",
+  ]) {
+    assert.match(schemaSource, new RegExp(`export const ${exportName} = sqliteTable\\(`), `missing ${exportName}`);
+  }
+});
+
+test("Unit 1 schema encodes critical draft and identity constraints", () => {
+  assert.match(schemaSource, /publicationStatus: text\("publication_status"/);
+  assert.match(schemaSource, /isDemo: integer\("is_demo", \{ mode: "boolean" \}\)/);
+  assert.match(schemaSource, /uniqueIndex\("benchmarks_slug_uq"\)/);
+  assert.match(schemaSource, /check\("benchmarks_freshness_days_check"/);
+  assert.match(schemaSource, /uniqueIndex\("benchmark_versions_identity_uq"\)/);
 });
