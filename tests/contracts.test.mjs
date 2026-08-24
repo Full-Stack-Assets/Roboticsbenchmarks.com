@@ -63,3 +63,27 @@ test("Unit 1 schema encodes critical draft and identity constraints", () => {
   assert.match(schemaSource, /check\("benchmarks_freshness_days_check"/);
   assert.match(schemaSource, /uniqueIndex\("benchmark_versions_identity_uq"\)/);
 });
+
+test("Unit 1 evidence kernel preserves claim-to-source provenance", () => {
+  for (const exportName of [
+    "evidenceClaims",
+    "claimSources",
+    "sourceSnapshots",
+    "sourceRetrievalOutcomes",
+    "verificationEvents",
+    "verificationEventSnapshots",
+    "evidenceDisputes",
+  ]) {
+    assert.match(schemaSource, new RegExp(`export const ${exportName} = sqliteTable\\(`), `missing ${exportName}`);
+  }
+  assert.match(schemaSource, /supportType: text\("support_type"\)/);
+  assert.match(schemaSource, /snapshotHash: text\("snapshot_hash"\)/);
+  assert.match(schemaSource, /freshUntil: text\("fresh_until"\)/);
+});
+
+test("accepted evidence remains distinguishable from disputes and retrieval health", () => {
+  assert.match(schemaSource, /evidenceState: text\("evidence_state"\)/);
+  assert.match(schemaSource, /conflictGroupId: text\("conflict_group_id"\)/);
+  assert.match(schemaSource, /requestOutcome: text\("request_outcome"\)/);
+  assert.match(schemaSource, /outcome: text\("outcome"\)/);
+});
