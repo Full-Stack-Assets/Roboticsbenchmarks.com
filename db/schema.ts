@@ -386,3 +386,168 @@ export const sources = sqliteTable(
     index("sources_health_checked_idx").on(table.sourceHealth, table.lastCheckedAt),
   ]
 );
+
+export const evidenceClaims = sqliteTable(
+  "evidence_claims",
+  {
+    id: text("id").primaryKey(),
+    benchmarkId: text("benchmark_id").references(() => benchmarks.id, { onDelete: "cascade" }),
+    resourceId: text("resource_id").references(() => resources.id, { onDelete: "cascade" }),
+    benchmarkVersionId: text("benchmark_version_id").references(() => benchmarkVersions.id, {
+      onDelete: "cascade",
+    }),
+    evaluationProtocolId: text("evaluation_protocol_id").references(() => evaluationProtocols.id, {
+      onDelete: "cascade",
+    }),
+    metricDefinitionId: text("metric_definition_id").references(() => metricDefinitions.id, {
+      onDelete: "cascade",
+    }),
+    fieldPath: text("field_path").notNull(),
+    valueJson: text("value_json").notNull(),
+    claimText: text("claim_text").notNull(),
+    evidenceState: text("evidence_state").notNull().default("proposed"),
+    confidence: text("confidence").notNull().default("low"),
+    versionScope: text("version_scope"),
+    validFrom: text("valid_from"),
+    validTo: text("valid_to"),
+    conflictGroupId: text("conflict_group_id"),
+    createdBy: text("created_by").notNull(),
+    reviewedBy: text("reviewed_by"),
+    reviewedAt: text("reviewed_at"),
+    ...timestamps,
+  },
+  (table) => [
+    index("evidence_claims_benchmark_field_state_idx").on(
+      table.benchmarkId,
+      table.fieldPath,
+      table.evidenceState
+    ),
+    index("evidence_claims_conflict_group_idx").on(table.conflictGroupId),
+  ]
+);
+
+export const claimSources = sqliteTable(
+  "claim_sources",
+  {
+    claimId: text("claim_id")
+      .notNull()
+      .references(() => evidenceClaims.id, { onDelete: "cascade" }),
+    sourceId: text("source_id")
+      .notNull()
+      .references(() => sources.id, { onDelete: "restrict" }),
+    locatorType: text("locator_type").notNull(),
+    locatorValue: text("locator_value").notNull(),
+    shortExcerpt: text("short_excerpt"),
+    supportType: text("support_type").notNull(),
+    addedBy: text("added_by").notNull(),
+    addedAt: text("added_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    primaryKey({ columns: [table.claimId, table.sourceId] }),
+    index("claim_sources_source_idx").on(table.sourceId),
+  ]
+);
+
+export const sourceSnapshots = sqliteTable(
+  "source_snapshots",
+  {
+    id: text("id").primaryKey(),
+    sourceId: text("source_id")
+      .notNull()
+      .references(() => sources.id, { onDelete: "restrict" }),
+    retrievedAt: text("retrieved_at").notNull(),
+    requestOutcome: text("request_outcome").notNull(),
+    finalUrl: text("final_url"),
+    httpMetadataJson: text("http_metadata_json"),
+    contentFingerprint: text("content_fingerprint"),
+    archivalObjectReference: text("archival_object_reference"),
+    snapshotHash: text("snapshot_hash").notNull(),
+    captureActor: text("capture_actor").notNull(),
+    retentionClass: text("retention_class").notNull(),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    uniqueIndex("source_snapshots_hash_uq").on(table.snapshotHash),
+    index("source_snapshots_source_retrieved_idx").on(table.sourceId, table.retrievedAt),
+  ]
+);
+
+export const sourceRetrievalOutcomes = sqliteTable(
+  "source_retrieval_outcomes",
+  {
+    id: text("id").primaryKey(),
+    sourceId: text("source_id")
+      .notNull()
+      .references(() => sources.id, { onDelete: "restrict" }),
+    checkedAt: text("checked_at").notNull(),
+    requestOutcome: text("request_outcome").notNull(),
+    httpStatus: integer("http_status"),
+    finalUrl: text("final_url"),
+    errorCode: text("error_code"),
+    sourceSnapshotId: text("source_snapshot_id").references(() => sourceSnapshots.id, {
+      onDelete: "set null",
+    }),
+    actorOrJob: text("actor_or_job").notNull(),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [index("source_retrieval_outcomes_source_checked_idx").on(table.sourceId, table.checkedAt)]
+);
+
+export const verificationEvents = sqliteTable(
+  "verification_events",
+  {
+    id: text("id").primaryKey(),
+    entityType: text("entity_type").notNull(),
+    entityId: text("entity_id").notNull(),
+    outcome: text("outcome").notNull(),
+    scopeJson: text("scope_json").notNull(),
+    verifiedBy: text("verified_by").notNull(),
+    verifiedAt: text("verified_at").notNull(),
+    freshUntil: text("fresh_until"),
+    notesPublic: text("notes_public"),
+    notesInternal: text("notes_internal"),
+    requestId: text("request_id").notNull(),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    index("verification_events_entity_time_idx").on(table.entityType, table.entityId, table.verifiedAt),
+    uniqueIndex("verification_events_request_uq").on(table.requestId),
+  ]
+);
+
+export const verificationEventSnapshots = sqliteTable(
+  "verification_event_snapshots",
+  {
+    verificationEventId: text("verification_event_id")
+      .notNull()
+      .references(() => verificationEvents.id, { onDelete: "cascade" }),
+    sourceSnapshotId: text("source_snapshot_id")
+      .notNull()
+      .references(() => sourceSnapshots.id, { onDelete: "restrict" }),
+  },
+  (table) => [primaryKey({ columns: [table.verificationEventId, table.sourceSnapshotId] })]
+);
+
+export const evidenceDisputes = sqliteTable(
+  "evidence_disputes",
+  {
+    id: text("id").primaryKey(),
+    benchmarkId: text("benchmark_id").references(() => benchmarks.id, { onDelete: "cascade" }),
+    claimId: text("claim_id").references(() => evidenceClaims.id, { onDelete: "set null" }),
+    fieldPath: text("field_path").notNull(),
+    state: text("state").notNull().default("open"),
+    rationale: text("rationale").notNull(),
+    openedBy: text("opened_by").notNull(),
+    openedAt: text("opened_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+    resolvedBy: text("resolved_by"),
+    resolvedAt: text("resolved_at"),
+    resolutionNote: text("resolution_note"),
+  },
+  (table) => [
+    index("evidence_disputes_benchmark_state_idx").on(table.benchmarkId, table.state),
+    check(
+      "evidence_disputes_resolution_check",
+      sql`${table.resolvedAt} is null or ${table.state} != 'open'`
+    ),
+  ]
+);
