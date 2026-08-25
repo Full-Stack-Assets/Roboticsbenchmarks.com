@@ -1,0 +1,10 @@
+{
+  "schema_id": "roboticsbenchmarks.source-locators/v1",
+  "retrieved_source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S11", "S12"],
+  "locators": [
+    {"claim_id":"claim:open-x-embodiment:identity","source_id":"S01","locator_type":"line_range","locator_value":"project page lines 19-22 and 34-48","support_type":"supports"},
+    {"claim_id":"claim:open-x-embodiment:identity","source_id":"S02","locator_type":"line_range","locator_value":"arXiv abstract lines 21-27","support_type":"supports"},
+    {"claim_id":"claim:open-x-embodiment:scope","source_id":"S01","locator_type":"line_range","locator_value":"project page lines 34-41","support_type":"supports"},
+    {"claim_id":"claim:open-x-embodiment:scope","source_id":"S02","locator_type":"line_range","locator_value":"arXiv abstract lines 21-27","support_type":"context"}
+  ]
+}
