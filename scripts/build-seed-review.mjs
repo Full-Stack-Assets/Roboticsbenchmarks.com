@@ -1,0 +1,68 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+
+const root = new URL("../", import.meta.url);
+const seed = JSON.parse(await readFile(new URL("canon/roboticsbenchmarks_seed_v1.json", root), "utf8"));
+const locatorOverrides = JSON.parse(await readFile(new URL("canon/reviews/source-locators-v1.json", root), "utf8"));
+const locators = new Map(locatorOverrides.locators.map((item) => [`${item.claim_id}:${item.source_id}`, item]));
+const retrievedAt = "2026-08-25T16:45:00Z";
+const sha256 = (value) => createHash("sha256").update(value).digest("hex");
+
+const sources = seed.sources.map((source) => ({
+  source_id: source.id,
+  entity_slug: source.entity_slug,
+  url: source.url,
+  source_type: source.source_type,
+  prior_retrieved_on: source.retrieved_on,
+  review_retrieval_state: locatorOverrides.retrieved_source_ids.includes(source.id) ? "retrieved" : "pending_retrieval",
+  reviewed_at: locatorOverrides.retrieved_source_ids.includes(source.id) ? retrievedAt : null,
+}));
+
+const claims = seed.records.flatMap((record) => record.claims.map((claim) => {
+  const claimId = `claim:${record.slug}:${claim.claim_key}`;
+  const bindings = claim.source_ids.map((sourceId) => {
+    const locator = locators.get(`${claimId}:${sourceId}`);
+    return {
+      source_id: sourceId,
+      locator_type: locator?.locator_type ?? null,
+      locator_value: locator?.locator_value ?? null,
+      support_type: locator?.support_type ?? "pending_review",
+    };
+  });
+  const independentlyLocatable = bindings.some((binding) => binding.support_type === "supports" && binding.locator_value);
+  return {
+    claim_id: claimId,
+    entity_slug: record.slug,
+    field_path: claim.claim_key,
+    value: claim.value,
+    bindings,
+    review_state: independentlyLocatable ? "review_candidate" : "pending_source_locator",
+    evidence_state: "proposed",
+    reviewer: null,
+    reviewed_at: null,
+  };
+}));
+
+const ledger = {
+  schema_id: "roboticsbenchmarks.seed-review/v1",
+  generated_at: retrievedAt,
+  source_seed_sha256: sha256(JSON.stringify(seed)),
+  posture: {
+    publication_authorized: false,
+    accepted_claims_written: false,
+    production_write_authorized: false,
+    review_rule: "A claim remains proposed until a human reviewer confirms an exact locator in a retrieved source snapshot.",
+  },
+  summary: {
+    records: seed.records.length,
+    sources: sources.length,
+    claims: claims.length,
+    retrieved_sources: sources.filter((source) => source.review_retrieval_state === "retrieved").length,
+    review_candidates: claims.filter((claim) => claim.review_state === "review_candidate").length,
+  },
+  sources,
+  claims,
+};
+
+await mkdir(new URL("canon/reviews/", root), { recursive: true });
+await writeFile(new URL("canon/reviews/unit-2-seed-review-v1.json", root), `${JSON.stringify(ledger, null, 2)}\n`);
