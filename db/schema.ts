@@ -551,3 +551,88 @@ export const evidenceDisputes = sqliteTable(
     ),
   ]
 );
+
+export const materialFieldManifests = sqliteTable(
+  "material_field_manifests",
+  {
+    id: text("id").primaryKey(),
+    entityType: text("entity_type").notNull(),
+    schemaVersion: text("schema_version").notNull(),
+    fieldPathsJson: text("field_paths_json").notNull(),
+    manifestHash: text("manifest_hash").notNull(),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    uniqueIndex("material_field_manifests_version_uq").on(table.entityType, table.schemaVersion),
+    uniqueIndex("material_field_manifests_hash_uq").on(table.manifestHash),
+  ]
+);
+
+export const entityRevisions = sqliteTable(
+  "entity_revisions",
+  {
+    id: text("id").primaryKey(),
+    entityType: text("entity_type").notNull(),
+    entityId: text("entity_id").notNull(),
+    revisionNumber: integer("revision_number").notNull(),
+    state: text("state").notNull().default("draft"),
+    manifestId: text("manifest_id")
+      .notNull()
+      .references(() => materialFieldManifests.id, { onDelete: "restrict" }),
+    canonicalPayload: text("canonical_payload").notNull(),
+    revisionHash: text("revision_hash").notNull(),
+    parentRevisionHash: text("parent_revision_hash"),
+    createdBy: text("created_by").notNull(),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+    frozenAt: text("frozen_at"),
+  },
+  (table) => [
+    uniqueIndex("entity_revisions_number_uq").on(table.entityType, table.entityId, table.revisionNumber),
+    uniqueIndex("entity_revisions_hash_uq").on(table.revisionHash),
+    index("entity_revisions_entity_state_idx").on(table.entityType, table.entityId, table.state),
+    check("entity_revisions_number_check", sql`${table.revisionNumber} > 0`),
+    check(
+      "entity_revisions_frozen_state_check",
+      sql`${table.frozenAt} is null or ${table.state} in ('frozen', 'published', 'archived')`
+    ),
+  ]
+);
+
+export const revisionFieldValues = sqliteTable(
+  "revision_field_values",
+  {
+    revisionId: text("revision_id")
+      .notNull()
+      .references(() => entityRevisions.id, { onDelete: "restrict" }),
+    fieldPath: text("field_path").notNull(),
+    valueJson: text("value_json").notNull(),
+    claimId: text("claim_id").references(() => evidenceClaims.id, { onDelete: "restrict" }),
+    valueHash: text("value_hash").notNull(),
+  },
+  (table) => [
+    primaryKey({ columns: [table.revisionId, table.fieldPath] }),
+    index("revision_field_values_claim_idx").on(table.claimId),
+  ]
+);
+
+export const auditEvents = sqliteTable(
+  "audit_events",
+  {
+    id: text("id").primaryKey(),
+    actor: text("actor").notNull(),
+    action: text("action").notNull(),
+    targetType: text("target_type").notNull(),
+    targetId: text("target_id").notNull(),
+    requestId: text("request_id").notNull(),
+    reason: text("reason").notNull(),
+    beforeReference: text("before_reference"),
+    afterReference: text("after_reference"),
+    occurredAt: text("occurred_at").notNull(),
+    eventHash: text("event_hash").notNull(),
+  },
+  (table) => [
+    uniqueIndex("audit_events_request_uq").on(table.requestId),
+    uniqueIndex("audit_events_hash_uq").on(table.eventHash),
+    index("audit_events_target_time_idx").on(table.targetType, table.targetId, table.occurredAt),
+  ]
+);
