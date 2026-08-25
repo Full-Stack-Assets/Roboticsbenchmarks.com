@@ -7,7 +7,7 @@ const locatorOverrides = JSON.parse(await readFile(new URL("canon/reviews/source
 const locators = new Map(locatorOverrides.locators.map((item) => [`${item.claim_id}:${item.source_id}`, item]));
 const retrievedSourceIds = new Set(locatorOverrides.retrieved_source_ids);
 const retrievalFailures = new Map(locatorOverrides.retrieval_failures.map((item) => [item.source_id, item]));
-const retrievedAt = "2026-08-25T17:30:00Z";
+const retrievedAt = "2026-08-25T21:15:00Z";
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 
 for (const sourceId of retrievedSourceIds) {
@@ -72,7 +72,7 @@ const ledger = {
   receipt: {
     work_item_id: "RB-U2-01",
     outcome: "draft_review_packet",
-    evidence_methods: ["primary_web_retrieval", "arxiv_source_archive", "official_repository"],
+    evidence_methods: ["primary_web_retrieval", "arxiv_source_archive", "official_repository", "official_dataset_health"],
     human_acceptance_recorded: false,
     publication_authorized: false,
   },

@@ -1,7 +1,7 @@
 {
   "schema_id": "roboticsbenchmarks.seed-review/v1",
-  "generated_at": "2026-08-25T17:30:00Z",
-  "source_seed_sha256": "16e82c6181cb132337b7b1cc58485ac410e933d51afff92ada41a6df8079f4dd",
+  "generated_at": "2026-08-25T21:15:00Z",
+  "source_seed_sha256": "941123bd455b51558ecc75cd3b993cd3b26c2c0983dc290f84862b9efdeb2107",
   "posture": {
     "publication_authorized": false,
     "accepted_claims_written": false,
@@ -14,7 +14,8 @@
     "evidence_methods": [
       "primary_web_retrieval",
       "arxiv_source_archive",
-      "official_repository"
+      "official_repository",
+      "official_dataset_health"
     ],
     "human_acceptance_recorded": false,
     "publication_authorized": false
@@ -23,12 +24,12 @@
     "records": 10,
     "sources": 40,
     "claims": 22,
-    "retrieved_sources": 33,
-    "retrieval_failures": 7,
+    "retrieved_sources": 34,
+    "retrieval_failures": 6,
     "pending_retrieval_sources": 0,
-    "located_bindings": 34,
-    "review_candidates": 21,
-    "pending_source_locators": 1
+    "located_bindings": 35,
+    "review_candidates": 22,
+    "pending_source_locators": 0
   },
   "sources": [
     {
@@ -40,7 +41,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S02",
@@ -51,7 +52,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S03",
@@ -62,7 +63,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S04",
@@ -73,7 +74,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S05",
@@ -84,7 +85,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S06",
@@ -95,7 +96,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S07",
@@ -106,7 +107,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S08",
@@ -117,7 +118,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S09",
@@ -128,7 +129,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S10",
@@ -139,7 +140,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "fetch_failed",
       "retrieval_note": "Official RobotPerf site returned an internal fetch error; repository and paper were retrieved instead.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S11",
@@ -150,7 +151,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S12",
@@ -161,7 +162,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S13",
@@ -172,7 +173,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "resource_unavailable",
       "retrieval_note": "The linked benchmark metric specification path was unavailable during review.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S14",
@@ -183,7 +184,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "empty_response",
       "retrieval_note": "RoboChallenge platform returned no independently locatable page content.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S15",
@@ -194,7 +195,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "empty_response",
       "retrieval_note": "RoboChallenge challenges page returned no independently locatable page content.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S16",
@@ -205,7 +206,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S17",
@@ -216,7 +217,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S18",
@@ -227,7 +228,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S19",
@@ -238,7 +239,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S20",
@@ -249,7 +250,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S21",
@@ -260,7 +261,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S22",
@@ -271,7 +272,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S23",
@@ -282,7 +283,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "empty_response",
       "retrieval_note": "ManiSkill project site returned no independently locatable page content; documentation, paper, and repository were retrieved instead.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S24",
@@ -293,7 +294,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S25",
@@ -304,7 +305,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S26",
@@ -315,7 +316,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S27",
@@ -326,7 +327,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S28",
@@ -337,7 +338,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S29",
@@ -348,7 +349,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S30",
@@ -359,7 +360,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "access_challenge",
       "retrieval_note": "OpenReview generation-context page presented an access challenge and was not treated as retrieved.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S31",
@@ -370,18 +371,18 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S32",
       "entity_slug": "calvin",
-      "url": "https://calvin.cs.uni-freiburg.de/",
-      "source_type": "official_project",
-      "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "retrieval_failed",
-      "retrieval_outcome": "fetch_failed",
-      "retrieval_note": "CALVIN project site failed retrieval; launch-day availability remains an explicit publication blocker.",
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "url": "http://calvin.cs.uni-freiburg.de/",
+      "source_type": "official_project_http",
+      "prior_retrieved_on": "2026-08-25",
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S33",
@@ -392,7 +393,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S34",
@@ -403,7 +404,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S35",
@@ -414,7 +415,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S36",
@@ -425,7 +426,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S37",
@@ -436,7 +437,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S38",
@@ -447,7 +448,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S39",
@@ -458,7 +459,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     },
     {
       "source_id": "S40",
@@ -469,7 +470,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T17:30:00Z"
+      "reviewed_at": "2026-08-25T21:15:00Z"
     }
   ],
   "claims": [
@@ -927,22 +928,22 @@
       "claim_id": "claim:calvin:health_state",
       "entity_slug": "calvin",
       "field_path": "health_state",
-      "value": "The project requires launch-day availability and checksum re-verification before publication.",
+      "value": "The official HTTP project and dataset endpoints responded successfully on 2026-08-25, and the official manifest lists SHA-256 hashes for all four declared archives.",
       "bindings": [
         {
           "source_id": "S32",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "health_receipt",
+          "locator_value": "canon/reviews/calvin-health-2026-08-25.json project_endpoint, checksum_manifest, and archive_endpoints; manifest snapshot at canon/reviews/snapshots/calvin-sha256sum-2026-08-25.txt lines 1-4",
+          "support_type": "supports"
         },
         {
           "source_id": "S34",
           "locator_type": "line_range",
-          "locator_value": "repository changelog lines 397-419 (prior dataset corrections and checksum update); launch-day availability still required",
+          "locator_value": "repository dataset/README.md lines 7-35 and root README.md lines 319-337 at commit fa03f01f19c65920e18cf37398a9ce859274af76 (four archives, checksum procedure, and prior checksum correction)",
           "support_type": "context"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null

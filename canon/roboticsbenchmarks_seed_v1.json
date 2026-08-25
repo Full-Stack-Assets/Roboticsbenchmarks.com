@@ -1,8 +1,8 @@
 {
   "schema_id": "roboticsbenchmarks.seed/v1",
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-20T08:51:45Z",
-  "evidence_cutoff": "2026-08-20",
+  "generated_at": "2026-08-25T21:15:00Z",
+  "evidence_cutoff": "2026-08-25",
   "source_packet": {
     "file_name": "RoboticsBenchmarks.com_MVP_Product_Specification.docx",
     "sha256": "e7c7496bd618afe8095e8561993cdec6775fc9cd80f0a784fda8e221c0fa7f48",
@@ -378,9 +378,9 @@
       "official_url": "https://calvin.cs.uni-freiburg.de/",
       "paper_url": "https://arxiv.org/abs/2112.03227",
       "code_url": "https://github.com/mees/calvin",
-      "verification_state": "potentially_stale",
-      "verification_note": "The official project site failed retrieval on 2026-08-20 and the official repository reports dataset/site connection failures. Reverify availability and checksum before publication.",
-      "source_verified_on": "2026-08-20",
+      "verification_state": "partially_verified",
+      "verification_note": "The official HTTP project page, checksum manifest, and all four declared archive endpoints responded successfully on 2026-08-25. HTTPS remained unavailable through the reviewer proxy; recheck endpoint health at the publication gate.",
+      "source_verified_on": "2026-08-25",
       "publication_status": "draft",
       "is_demo": false,
       "source_ids": ["S32", "S33", "S34"],
@@ -392,7 +392,7 @@
         },
         {
           "claim_key": "health_state",
-          "value": "The project requires launch-day availability and checksum re-verification before publication.",
+          "value": "The official HTTP project and dataset endpoints responded successfully on 2026-08-25, and the official manifest lists SHA-256 hashes for all four declared archives.",
           "source_ids": ["S32", "S34"]
         }
       ]
@@ -477,7 +477,7 @@
     {"id": "S29", "entity_slug": "meta-world", "source_type": "original_paper", "url": "https://proceedings.mlr.press/v100/yu20a.html", "retrieved_on": "2026-08-20"},
     {"id": "S30", "entity_slug": "meta-world", "source_type": "generation_context_paper", "url": "https://openreview.net/forum?id=1de3azE606", "retrieved_on": "2026-08-20"},
     {"id": "S31", "entity_slug": "meta-world", "source_type": "official_repository", "url": "https://github.com/Farama-Foundation/Metaworld", "retrieved_on": "2026-08-20"},
-    {"id": "S32", "entity_slug": "calvin", "source_type": "official_project", "url": "https://calvin.cs.uni-freiburg.de/", "retrieved_on": "2026-08-20", "retrieval_state": "failed"},
+    {"id": "S32", "entity_slug": "calvin", "source_type": "official_project_http", "url": "http://calvin.cs.uni-freiburg.de/", "retrieved_on": "2026-08-25"},
     {"id": "S33", "entity_slug": "calvin", "source_type": "original_paper", "url": "https://arxiv.org/abs/2112.03227", "retrieved_on": "2026-08-20"},
     {"id": "S34", "entity_slug": "calvin", "source_type": "official_repository", "url": "https://github.com/mees/calvin", "retrieved_on": "2026-08-20"},
     {"id": "S35", "entity_slug": "barn-challenge-2026", "source_type": "official_organizer_page", "url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge26.html", "retrieved_on": "2026-08-20"},

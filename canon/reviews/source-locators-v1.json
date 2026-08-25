@@ -3,7 +3,7 @@
   "retrieved_source_ids": [
     "S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09",
     "S11", "S12", "S16", "S17", "S18", "S19", "S20", "S21", "S22",
-    "S24", "S25", "S26", "S27", "S28", "S29", "S31", "S33", "S34",
+    "S24", "S25", "S26", "S27", "S28", "S29", "S31", "S32", "S33", "S34",
     "S35", "S36", "S37", "S38", "S39", "S40"
   ],
   "retrieval_failures": [
@@ -12,8 +12,7 @@
     {"source_id":"S14","outcome":"empty_response","note":"RoboChallenge platform returned no independently locatable page content."},
     {"source_id":"S15","outcome":"empty_response","note":"RoboChallenge challenges page returned no independently locatable page content."},
     {"source_id":"S23","outcome":"empty_response","note":"ManiSkill project site returned no independently locatable page content; documentation, paper, and repository were retrieved instead."},
-    {"source_id":"S30","outcome":"access_challenge","note":"OpenReview generation-context page presented an access challenge and was not treated as retrieved."},
-    {"source_id":"S32","outcome":"fetch_failed","note":"CALVIN project site failed retrieval; launch-day availability remains an explicit publication blocker."}
+    {"source_id":"S30","outcome":"access_challenge","note":"OpenReview generation-context page presented an access challenge and was not treated as retrieved."}
   ],
   "locators": [
     {"claim_id":"claim:open-x-embodiment:identity","source_id":"S01","locator_type":"line_range","locator_value":"project page lines 19-22 and 34-48","support_type":"supports"},
@@ -55,7 +54,8 @@
     {"claim_id":"claim:meta-world:metric","source_id":"S29","locator_type":"pdf_line_range","locator_value":"paper pages 7 and 13, extracted lines 377-395 and 663-673 (success rate averaged across tasks under MT and ML protocols)","support_type":"supports"},
 
     {"claim_id":"claim:calvin:scope","source_id":"S33","locator_type":"pdf_line_range","locator_value":"paper pages 2-7, extracted lines 63-95, 143-146, 281-295, 391-405, and 623-644","support_type":"supports"},
-    {"claim_id":"claim:calvin:health_state","source_id":"S34","locator_type":"line_range","locator_value":"repository changelog lines 397-419 (prior dataset corrections and checksum update); launch-day availability still required","support_type":"context"},
+    {"claim_id":"claim:calvin:health_state","source_id":"S34","locator_type":"line_range","locator_value":"repository dataset/README.md lines 7-35 and root README.md lines 319-337 at commit fa03f01f19c65920e18cf37398a9ce859274af76 (four archives, checksum procedure, and prior checksum correction)","support_type":"context"},
+    {"claim_id":"claim:calvin:health_state","source_id":"S32","locator_type":"health_receipt","locator_value":"canon/reviews/calvin-health-2026-08-25.json project_endpoint, checksum_manifest, and archive_endpoints; manifest snapshot at canon/reviews/snapshots/calvin-sha256sum-2026-08-25.txt lines 1-4","support_type":"supports"},
 
     {"claim_id":"claim:barn-challenge-2026:scope","source_id":"S35","locator_type":"line_range","locator_value":"official challenge page lines 29-49","support_type":"supports"},
     {"claim_id":"claim:barn-challenge-2026:scope","source_id":"S36","locator_type":"line_range","locator_value":"official dataset page lines 13-23","support_type":"supports"},
