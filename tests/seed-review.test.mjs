@@ -10,6 +10,9 @@ test("Unit 2 review ledger covers the complete seed without publishing", () => {
   assert.equal(review.posture.publication_authorized, false);
   assert.equal(review.posture.accepted_claims_written, false);
   assert.equal(review.posture.production_write_authorized, false);
+  assert.equal(review.receipt.outcome, "draft_review_packet");
+  assert.equal(review.receipt.human_acceptance_recorded, false);
+  assert.equal(review.receipt.publication_authorized, false);
   assert.ok(review.claims.every((claim) => claim.evidence_state === "proposed"));
 });
 
@@ -36,6 +39,9 @@ test("supporting locators only reference retrieved sources", () => {
 });
 
 test("unreviewed claims fail closed", () => {
-  assert.ok(review.claims.some((claim) => claim.review_state === "pending_source_locator"));
-  assert.ok(review.claims.filter((claim) => claim.review_state === "pending_source_locator").every((claim) => claim.reviewer === null && claim.reviewed_at === null));
+  const pending = review.claims.filter((claim) => claim.review_state === "pending_source_locator");
+  assert.equal(review.summary.review_candidates, 21);
+  assert.equal(review.summary.pending_source_locators, 1);
+  assert.deepEqual(pending.map((claim) => claim.claim_id), ["claim:calvin:health_state"]);
+  assert.ok(pending.every((claim) => claim.reviewer === null && claim.reviewed_at === null));
 });

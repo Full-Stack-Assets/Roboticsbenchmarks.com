@@ -7,7 +7,7 @@ const locatorOverrides = JSON.parse(await readFile(new URL("canon/reviews/source
 const locators = new Map(locatorOverrides.locators.map((item) => [`${item.claim_id}:${item.source_id}`, item]));
 const retrievedSourceIds = new Set(locatorOverrides.retrieved_source_ids);
 const retrievalFailures = new Map(locatorOverrides.retrieval_failures.map((item) => [item.source_id, item]));
-const retrievedAt = "2026-08-25T16:45:00Z";
+const retrievedAt = "2026-08-25T17:30:00Z";
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 
 for (const sourceId of retrievedSourceIds) {
@@ -69,6 +69,13 @@ const ledger = {
     production_write_authorized: false,
     review_rule: "A claim remains proposed until a human reviewer confirms an exact locator in a retrieved source snapshot.",
   },
+  receipt: {
+    work_item_id: "RB-U2-01",
+    outcome: "draft_review_packet",
+    evidence_methods: ["primary_web_retrieval", "arxiv_source_archive", "official_repository"],
+    human_acceptance_recorded: false,
+    publication_authorized: false,
+  },
   summary: {
     records: seed.records.length,
     sources: sources.length,
@@ -78,6 +85,7 @@ const ledger = {
     pending_retrieval_sources: sources.filter((source) => source.review_retrieval_state === "pending_retrieval").length,
     located_bindings: claims.flatMap((claim) => claim.bindings).filter((binding) => binding.locator_value).length,
     review_candidates: claims.filter((claim) => claim.review_state === "review_candidate").length,
+    pending_source_locators: claims.filter((claim) => claim.review_state === "pending_source_locator").length,
   },
   sources,
   claims,

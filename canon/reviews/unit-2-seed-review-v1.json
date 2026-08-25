@@ -1,12 +1,23 @@
 {
   "schema_id": "roboticsbenchmarks.seed-review/v1",
-  "generated_at": "2026-08-25T16:45:00Z",
-  "source_seed_sha256": "edf919b2cb2f3141c25c0da69e6c18e53a0dfec044890263ce1e93768d663533",
+  "generated_at": "2026-08-25T17:30:00Z",
+  "source_seed_sha256": "16e82c6181cb132337b7b1cc58485ac410e933d51afff92ada41a6df8079f4dd",
   "posture": {
     "publication_authorized": false,
     "accepted_claims_written": false,
     "production_write_authorized": false,
     "review_rule": "A claim remains proposed until a human reviewer confirms an exact locator in a retrieved source snapshot."
+  },
+  "receipt": {
+    "work_item_id": "RB-U2-01",
+    "outcome": "draft_review_packet",
+    "evidence_methods": [
+      "primary_web_retrieval",
+      "arxiv_source_archive",
+      "official_repository"
+    ],
+    "human_acceptance_recorded": false,
+    "publication_authorized": false
   },
   "summary": {
     "records": 10,
@@ -15,8 +26,9 @@
     "retrieved_sources": 33,
     "retrieval_failures": 7,
     "pending_retrieval_sources": 0,
-    "located_bindings": 32,
-    "review_candidates": 14
+    "located_bindings": 34,
+    "review_candidates": 21,
+    "pending_source_locators": 1
   },
   "sources": [
     {
@@ -28,7 +40,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S02",
@@ -39,7 +51,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S03",
@@ -50,7 +62,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S04",
@@ -61,7 +73,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S05",
@@ -72,7 +84,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S06",
@@ -83,7 +95,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S07",
@@ -94,7 +106,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S08",
@@ -105,7 +117,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S09",
@@ -116,7 +128,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S10",
@@ -127,7 +139,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "fetch_failed",
       "retrieval_note": "Official RobotPerf site returned an internal fetch error; repository and paper were retrieved instead.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S11",
@@ -138,7 +150,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S12",
@@ -149,7 +161,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S13",
@@ -160,7 +172,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "resource_unavailable",
       "retrieval_note": "The linked benchmark metric specification path was unavailable during review.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S14",
@@ -171,7 +183,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "empty_response",
       "retrieval_note": "RoboChallenge platform returned no independently locatable page content.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S15",
@@ -182,7 +194,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "empty_response",
       "retrieval_note": "RoboChallenge challenges page returned no independently locatable page content.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S16",
@@ -193,7 +205,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S17",
@@ -204,7 +216,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S18",
@@ -215,7 +227,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S19",
@@ -226,7 +238,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S20",
@@ -237,7 +249,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S21",
@@ -248,7 +260,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S22",
@@ -259,7 +271,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S23",
@@ -270,7 +282,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "empty_response",
       "retrieval_note": "ManiSkill project site returned no independently locatable page content; documentation, paper, and repository were retrieved instead.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S24",
@@ -281,7 +293,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S25",
@@ -292,7 +304,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S26",
@@ -303,7 +315,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S27",
@@ -314,7 +326,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S28",
@@ -325,7 +337,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S29",
@@ -336,7 +348,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S30",
@@ -347,7 +359,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "access_challenge",
       "retrieval_note": "OpenReview generation-context page presented an access challenge and was not treated as retrieved.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S31",
@@ -358,7 +370,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S32",
@@ -369,7 +381,7 @@
       "review_retrieval_state": "retrieval_failed",
       "retrieval_outcome": "fetch_failed",
       "retrieval_note": "CALVIN project site failed retrieval; launch-day availability remains an explicit publication blocker.",
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S33",
@@ -380,7 +392,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S34",
@@ -391,7 +403,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S35",
@@ -402,7 +414,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S36",
@@ -413,7 +425,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S37",
@@ -424,7 +436,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S38",
@@ -435,7 +447,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S39",
@@ -446,7 +458,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     },
     {
       "source_id": "S40",
@@ -457,7 +469,7 @@
       "review_retrieval_state": "retrieved",
       "retrieval_outcome": null,
       "retrieval_note": null,
-      "reviewed_at": "2026-08-25T16:45:00Z"
+      "reviewed_at": "2026-08-25T17:30:00Z"
     }
   ],
   "claims": [
@@ -559,12 +571,12 @@
       "bindings": [
         {
           "source_id": "S05",
-          "locator_type": "line_range",
-          "locator_value": "arXiv abstract line 19 (forward-transfer result only; NBT and AUC remain unlocated)",
-          "support_type": "context"
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source content/experiment.tex lines 15-28 (FWT, NBT, and AUC definitions and aggregation)",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -597,13 +609,13 @@
       "claim_id": "claim:rlbench:metric",
       "entity_slug": "rlbench",
       "field_path": "metric",
-      "value": "Sparse task completion is aggregated as task success rate under a declared task set and protocol.",
+      "value": "Each task exposes sparse completion reward: +1 only when the task is completed.",
       "bindings": [
         {
           "source_id": "S08",
           "locator_type": "pdf_line_range",
-          "locator_value": "paper page 4, extracted lines 279-300 (sparse +1 on completion; aggregation remains unlocated)",
-          "support_type": "context"
+          "locator_value": "paper page 4, extracted lines 279-300 (each task has sparse reward of +1 only on completion)",
+          "support_type": "supports"
         },
         {
           "source_id": "S09",
@@ -612,7 +624,7 @@
           "support_type": "pending_review"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -645,13 +657,13 @@
       "claim_id": "claim:robotperf:metric_model",
       "entity_slug": "robotperf",
       "field_path": "metric_model",
-      "value": "Metrics are workload-specific; no global scalar score is defined.",
+      "value": "Benchmark results record workload-scoped metrics such as latency, throughput, and power.",
       "bindings": [
         {
           "source_id": "S12",
           "locator_type": "line_range",
-          "locator_value": "repository README lines 185-194 (multiple benchmark-category axes)",
-          "support_type": "context"
+          "locator_value": "repository benchmarks/README.md lines 152-166 and 223 (workload-level latency, throughput, power, and other recorded metrics)",
+          "support_type": "supports"
         },
         {
           "source_id": "S13",
@@ -660,7 +672,7 @@
           "support_type": "pending_review"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -703,12 +715,12 @@
       "bindings": [
         {
           "source_id": "S16",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source _main.tex lines 38-52 (ten machines, four robot types, and 30 fixed-table tasks/Table30)",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -721,12 +733,12 @@
       "bindings": [
         {
           "source_id": "S16",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source _main.tex lines 326-345 (end-to-end success and staged progress scoring)",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -823,12 +835,12 @@
       "bindings": [
         {
           "source_id": "S25",
-          "locator_type": "line_range",
-          "locator_value": "arXiv abstract lines 14-17 (12 domains and demonstration frames; >20 embodiments remains unlocated)",
-          "support_type": "context"
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source paper_template.tex line 54 and sections/intro.tex line 12 (12 domains, 20+ embodiments, and millions of demonstration frames)",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -873,7 +885,7 @@
       "claim_id": "claim:meta-world:metric",
       "entity_slug": "meta-world",
       "field_path": "metric",
-      "value": "Binary task success is aggregated across declared tasks and episodes; mean return is supplementary.",
+      "value": "Success rate is averaged across tasks under the declared MT or ML evaluation protocol.",
       "bindings": [
         {
           "source_id": "S28",
@@ -884,11 +896,11 @@
         {
           "source_id": "S29",
           "locator_type": "pdf_line_range",
-          "locator_value": "paper pages 7 and 13, extracted lines 377-395, 420-423, and 663-673 (success aggregation and return context; binary semantics remain unlocated)",
-          "support_type": "context"
+          "locator_value": "paper pages 7 and 13, extracted lines 377-395 and 663-673 (success rate averaged across tasks under MT and ML protocols)",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null

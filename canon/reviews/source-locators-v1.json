@@ -23,18 +23,20 @@
 
     {"claim_id":"claim:libero:identity","source_id":"S05","locator_type":"line_range","locator_value":"arXiv abstract lines 16-18","support_type":"supports"},
     {"claim_id":"claim:libero:scope","source_id":"S05","locator_type":"line_range","locator_value":"arXiv abstract lines 17-18","support_type":"supports"},
-    {"claim_id":"claim:libero:metrics","source_id":"S05","locator_type":"line_range","locator_value":"arXiv abstract line 19 (forward-transfer result only; NBT and AUC remain unlocated)","support_type":"context"},
+    {"claim_id":"claim:libero:metrics","source_id":"S05","locator_type":"source_line_range","locator_value":"arXiv TeX source content/experiment.tex lines 15-28 (FWT, NBT, and AUC definitions and aggregation)","support_type":"supports"},
 
     {"claim_id":"claim:rlbench:scope","source_id":"S07","locator_type":"line_range","locator_value":"official project page lines 18-30","support_type":"supports"},
     {"claim_id":"claim:rlbench:scope","source_id":"S08","locator_type":"line_range","locator_value":"arXiv abstract lines 16-18","support_type":"supports"},
-    {"claim_id":"claim:rlbench:metric","source_id":"S08","locator_type":"pdf_line_range","locator_value":"paper page 4, extracted lines 279-300 (sparse +1 on completion; aggregation remains unlocated)","support_type":"context"},
+    {"claim_id":"claim:rlbench:metric","source_id":"S08","locator_type":"pdf_line_range","locator_value":"paper page 4, extracted lines 279-300 (each task has sparse reward of +1 only on completion)","support_type":"supports"},
 
     {"claim_id":"claim:robotperf:identity","source_id":"S11","locator_type":"pdf_line_range","locator_value":"paper pages 1-2, extracted lines 80-112","support_type":"supports"},
     {"claim_id":"claim:robotperf:identity","source_id":"S12","locator_type":"line_range","locator_value":"repository README lines 169-187","support_type":"supports"},
     {"claim_id":"claim:robotperf:metric_model","source_id":"S11","locator_type":"pdf_line_range","locator_value":"paper page 4, extracted lines 312-327, and page 6, lines 493-502 (workload metrics; absence of a global scalar remains unconfirmed)","support_type":"context"},
-    {"claim_id":"claim:robotperf:metric_model","source_id":"S12","locator_type":"line_range","locator_value":"repository README lines 185-194 (multiple benchmark-category axes)","support_type":"context"},
+    {"claim_id":"claim:robotperf:metric_model","source_id":"S12","locator_type":"line_range","locator_value":"repository benchmarks/README.md lines 152-166 and 223 (workload-level latency, throughput, power, and other recorded metrics)","support_type":"supports"},
 
     {"claim_id":"claim:robochallenge-table30:identity","source_id":"S16","locator_type":"line_range","locator_value":"arXiv title and abstract lines 9-16","support_type":"supports"},
+    {"claim_id":"claim:robochallenge-table30:scope","source_id":"S16","locator_type":"source_line_range","locator_value":"arXiv TeX source _main.tex lines 38-52 (ten machines, four robot types, and 30 fixed-table tasks/Table30)","support_type":"supports"},
+    {"claim_id":"claim:robochallenge-table30:metrics","source_id":"S16","locator_type":"source_line_range","locator_value":"arXiv TeX source _main.tex lines 326-345 (end-to-end success and staged progress scoring)","support_type":"supports"},
 
     {"claim_id":"claim:habitat:identity","source_id":"S19","locator_type":"line_range","locator_value":"official project page lines 40-55","support_type":"supports"},
     {"claim_id":"claim:habitat:identity","source_id":"S20","locator_type":"pdf_line_range","locator_value":"paper page 1, extracted lines 8-32, and page 2, lines 120-135","support_type":"supports"},
@@ -45,12 +47,12 @@
     {"claim_id":"claim:maniskill-3:identity","source_id":"S25","locator_type":"line_range","locator_value":"arXiv abstract lines 14-17","support_type":"supports"},
     {"claim_id":"claim:maniskill-3:identity","source_id":"S26","locator_type":"line_range","locator_value":"ManiSkill2 arXiv abstract lines 15-18 (generation context)","support_type":"context"},
     {"claim_id":"claim:maniskill-3:identity","source_id":"S27","locator_type":"line_range","locator_value":"repository README lines 228-241 (version-specific ManiSkill3 and ManiSkill2 citations)","support_type":"supports"},
-    {"claim_id":"claim:maniskill-3:scope","source_id":"S25","locator_type":"line_range","locator_value":"arXiv abstract lines 14-17 (12 domains and demonstration frames; >20 embodiments remains unlocated)","support_type":"context"},
+    {"claim_id":"claim:maniskill-3:scope","source_id":"S25","locator_type":"source_line_range","locator_value":"arXiv TeX source paper_template.tex line 54 and sections/intro.tex line 12 (12 domains, 20+ embodiments, and millions of demonstration frames)","support_type":"supports"},
 
     {"claim_id":"claim:meta-world:scope","source_id":"S28","locator_type":"line_range","locator_value":"official documentation lines 36-47 (50 tasks only)","support_type":"context"},
     {"claim_id":"claim:meta-world:scope","source_id":"S29","locator_type":"pdf_line_range","locator_value":"paper pages 4-6, extracted lines 264-290 and 335-339","support_type":"context"},
     {"claim_id":"claim:meta-world:scope","source_id":"S31","locator_type":"line_range","locator_value":"repository README lines 179-211","support_type":"supports"},
-    {"claim_id":"claim:meta-world:metric","source_id":"S29","locator_type":"pdf_line_range","locator_value":"paper pages 7 and 13, extracted lines 377-395, 420-423, and 663-673 (success aggregation and return context; binary semantics remain unlocated)","support_type":"context"},
+    {"claim_id":"claim:meta-world:metric","source_id":"S29","locator_type":"pdf_line_range","locator_value":"paper pages 7 and 13, extracted lines 377-395 and 663-673 (success rate averaged across tasks under MT and ML protocols)","support_type":"supports"},
 
     {"claim_id":"claim:calvin:scope","source_id":"S33","locator_type":"pdf_line_range","locator_value":"paper pages 2-7, extracted lines 63-95, 143-146, 281-295, 391-405, and 623-644","support_type":"supports"},
     {"claim_id":"claim:calvin:health_state","source_id":"S34","locator_type":"line_range","locator_value":"repository changelog lines 397-419 (prior dataset corrections and checksum update); launch-day availability still required","support_type":"context"},

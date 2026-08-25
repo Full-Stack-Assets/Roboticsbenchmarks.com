@@ -122,7 +122,7 @@
         "name": "Task success rate",
         "protocol_id": "pro_rlbench_declared_task_set",
         "direction": "higher_is_better",
-        "note": "No protocol-independent RLBench score exists."
+        "note": "Interpret the task success rate only within the declared task set and evaluation protocol."
       },
       "official_url": "https://sites.google.com/view/rlbench",
       "paper_url": "https://arxiv.org/abs/1909.12271",
@@ -141,7 +141,7 @@
         },
         {
           "claim_key": "metric",
-          "value": "Sparse task completion is aggregated as task success rate under a declared task set and protocol.",
+          "value": "Each task exposes sparse completion reward: +1 only when the task is completed.",
           "source_ids": ["S08", "S09"]
         }
       ]
@@ -156,7 +156,7 @@
       "primary_metric_summary": {
         "state": "multiple",
         "name": null,
-        "note": "RobotPerf has workload-specific measures and no scalar global score."
+        "note": "RobotPerf reports workload-scoped measures with their units and measurement methods."
       },
       "other_metrics": [
         {"name": "Latency", "protocol_scope": "workload_specific"},
@@ -184,7 +184,7 @@
         },
         {
           "claim_key": "metric_model",
-          "value": "Metrics are workload-specific; no global scalar score is defined.",
+          "value": "Benchmark results record workload-scoped metrics such as latency, throughput, and power.",
           "source_ids": ["S12", "S13"]
         }
       ]
@@ -354,7 +354,7 @@
         },
         {
           "claim_key": "metric",
-          "value": "Binary task success is aggregated across declared tasks and episodes; mean return is supplementary.",
+          "value": "Success rate is averaged across tasks under the declared MT or ML evaluation protocol.",
           "source_ids": ["S28", "S29"]
         }
       ]
