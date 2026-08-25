@@ -6,6 +6,9 @@ import { readFile } from "node:fs/promises";
 const review = JSON.parse(await readFile(new URL("../canon/reviews/unit-2-seed-review-v1.json", import.meta.url), "utf8"));
 const calvinHealth = JSON.parse(await readFile(new URL("../canon/reviews/calvin-health-2026-08-25.json", import.meta.url), "utf8"));
 const calvinManifest = await readFile(new URL("../canon/reviews/snapshots/calvin-sha256sum-2026-08-25.txt", import.meta.url), "utf8");
+const humanPacketBytes = await readFile(new URL("../canon/reviews/unit-2-human-review-packet-v1.json", import.meta.url));
+const humanPacket = JSON.parse(humanPacketBytes);
+const humanPacketChecksum = await readFile(new URL("../canon/reviews/unit-2-human-review-packet-v1.json.sha256", import.meta.url), "utf8");
 
 test("Unit 2 review ledger covers the complete seed without publishing", () => {
   assert.equal(review.summary.records, 10);
@@ -61,4 +64,15 @@ test("CALVIN health receipt preserves endpoint and checksum-manifest evidence", 
   assert.equal(calvinHealth.verification.full_archive_checksums_recomputed, false);
   assert.equal(calvinHealth.posture.launch_day_recheck_required, true);
   assert.equal(calvinHealth.posture.publication_authorized, false);
+});
+
+test("human review packet is complete, payload-bound, and grants no authority", () => {
+  const expectedChecksum = humanPacketChecksum.trim().split(/\s+/)[0];
+  assert.equal(createHash("sha256").update(humanPacketBytes).digest("hex"), expectedChecksum);
+  assert.equal(humanPacket.claims.length, review.claims.length);
+  assert.deepEqual(humanPacket.claims.map((claim) => claim.claim_id), review.claims.map((claim) => claim.claim_id));
+  assert.ok(humanPacket.claims.every((claim) => claim.supporting_bindings.length > 0));
+  assert.ok(humanPacket.claims.every((claim) => claim.decision === "pending_human_review" && claim.reviewer === null && claim.reviewed_at === null));
+  assert.equal(humanPacket.posture.publication_authorized, false);
+  assert.equal(humanPacket.posture.merge_authorized, false);
 });
