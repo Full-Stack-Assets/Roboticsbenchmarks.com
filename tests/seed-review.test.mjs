@@ -19,6 +19,22 @@ test("review candidates require an exact supporting source locator", () => {
   }
 });
 
+test("source retrieval attempts are exhaustive and fail closed", () => {
+  assert.equal(review.summary.retrieved_sources, 33);
+  assert.equal(review.summary.retrieval_failures, 7);
+  assert.equal(review.summary.pending_retrieval_sources, 0);
+  assert.equal(review.summary.retrieved_sources + review.summary.retrieval_failures, review.summary.sources);
+  assert.ok(review.sources.filter((source) => source.review_retrieval_state === "retrieval_failed")
+    .every((source) => source.retrieval_outcome && source.retrieval_note && source.reviewed_at));
+});
+
+test("supporting locators only reference retrieved sources", () => {
+  const sourceStates = new Map(review.sources.map((source) => [source.source_id, source.review_retrieval_state]));
+  for (const binding of review.claims.flatMap((claim) => claim.bindings)) {
+    if (binding.support_type === "supports") assert.equal(sourceStates.get(binding.source_id), "retrieved");
+  }
+});
+
 test("unreviewed claims fail closed", () => {
   assert.ok(review.claims.some((claim) => claim.review_state === "pending_source_locator"));
   assert.ok(review.claims.filter((claim) => claim.review_state === "pending_source_locator").every((claim) => claim.reviewer === null && claim.reviewed_at === null));

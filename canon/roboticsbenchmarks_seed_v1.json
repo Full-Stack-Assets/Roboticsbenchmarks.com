@@ -350,7 +350,7 @@
         {
           "claim_key": "scope",
           "value": "Current official materials expose 50 tasks with MT1, MT10, MT50, ML1, ML10, and ML45 protocols.",
-          "source_ids": ["S28", "S29", "S30"]
+          "source_ids": ["S28", "S29", "S30", "S31"]
         },
         {
           "claim_key": "metric",

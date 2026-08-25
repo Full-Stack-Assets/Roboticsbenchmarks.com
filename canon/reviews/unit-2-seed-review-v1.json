@@ -1,7 +1,7 @@
 {
   "schema_id": "roboticsbenchmarks.seed-review/v1",
   "generated_at": "2026-08-25T16:45:00Z",
-  "source_seed_sha256": "defc43d016ef07eddad474f3d157f54c0aab21e1ea73f0fbfceec373d89dd008",
+  "source_seed_sha256": "edf919b2cb2f3141c25c0da69e6c18e53a0dfec044890263ce1e93768d663533",
   "posture": {
     "publication_authorized": false,
     "accepted_claims_written": false,
@@ -12,8 +12,11 @@
     "records": 10,
     "sources": 40,
     "claims": 22,
-    "retrieved_sources": 11,
-    "review_candidates": 2
+    "retrieved_sources": 33,
+    "retrieval_failures": 7,
+    "pending_retrieval_sources": 0,
+    "located_bindings": 32,
+    "review_candidates": 14
   },
   "sources": [
     {
@@ -23,6 +26,8 @@
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -32,6 +37,8 @@
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -41,6 +48,8 @@
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -50,6 +59,8 @@
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -59,6 +70,8 @@
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -68,6 +81,8 @@
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -77,6 +92,8 @@
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -86,6 +103,8 @@
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -95,6 +114,8 @@
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -103,8 +124,10 @@
       "url": "https://robotperf.net/",
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "fetch_failed",
+      "retrieval_note": "Official RobotPerf site returned an internal fetch error; repository and paper were retrieved instead.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S11",
@@ -113,6 +136,8 @@
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -122,6 +147,8 @@
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
       "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
       "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
@@ -130,8 +157,10 @@
       "url": "https://github.com/robotperf/benchmarks/blob/main/benchmarks/README.md",
       "source_type": "official_metric_specification",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "resource_unavailable",
+      "retrieval_note": "The linked benchmark metric specification path was unavailable during review.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S14",
@@ -139,8 +168,10 @@
       "url": "https://robochallenge.ai/",
       "source_type": "official_platform",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "empty_response",
+      "retrieval_note": "RoboChallenge platform returned no independently locatable page content.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S15",
@@ -148,8 +179,10 @@
       "url": "https://robochallenge.ai/challenges",
       "source_type": "official_challenges_page",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "empty_response",
+      "retrieval_note": "RoboChallenge challenges page returned no independently locatable page content.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S16",
@@ -157,8 +190,10 @@
       "url": "https://arxiv.org/abs/2510.17950",
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S17",
@@ -166,8 +201,10 @@
       "url": "https://github.com/RoboChallenge/RoboChallengeInference",
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S18",
@@ -175,8 +212,10 @@
       "url": "https://huggingface.co/datasets/RoboChallenge/Table30v2",
       "source_type": "official_dataset",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S19",
@@ -184,8 +223,10 @@
       "url": "https://aihabitat.org/",
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S20",
@@ -193,8 +234,10 @@
       "url": "https://arxiv.org/abs/1904.01201",
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S21",
@@ -202,8 +245,10 @@
       "url": "https://github.com/facebookresearch/habitat-lab",
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S22",
@@ -211,8 +256,10 @@
       "url": "https://github.com/facebookresearch/habitat-sim",
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S23",
@@ -220,8 +267,10 @@
       "url": "https://www.maniskill.ai/",
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "empty_response",
+      "retrieval_note": "ManiSkill project site returned no independently locatable page content; documentation, paper, and repository were retrieved instead.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S24",
@@ -229,8 +278,10 @@
       "url": "https://maniskill.readthedocs.io/",
       "source_type": "official_documentation",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S25",
@@ -238,8 +289,10 @@
       "url": "https://arxiv.org/abs/2410.00425",
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S26",
@@ -247,8 +300,10 @@
       "url": "https://arxiv.org/abs/2302.04659",
       "source_type": "generation_context_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S27",
@@ -256,8 +311,10 @@
       "url": "https://github.com/haosulab/ManiSkill",
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S28",
@@ -265,8 +322,10 @@
       "url": "https://metaworld.farama.org/",
       "source_type": "official_documentation",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S29",
@@ -274,8 +333,10 @@
       "url": "https://proceedings.mlr.press/v100/yu20a.html",
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S30",
@@ -283,8 +344,10 @@
       "url": "https://openreview.net/forum?id=1de3azE606",
       "source_type": "generation_context_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "access_challenge",
+      "retrieval_note": "OpenReview generation-context page presented an access challenge and was not treated as retrieved.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S31",
@@ -292,8 +355,10 @@
       "url": "https://github.com/Farama-Foundation/Metaworld",
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S32",
@@ -301,8 +366,10 @@
       "url": "https://calvin.cs.uni-freiburg.de/",
       "source_type": "official_project",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieval_failed",
+      "retrieval_outcome": "fetch_failed",
+      "retrieval_note": "CALVIN project site failed retrieval; launch-day availability remains an explicit publication blocker.",
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S33",
@@ -310,8 +377,10 @@
       "url": "https://arxiv.org/abs/2112.03227",
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S34",
@@ -319,8 +388,10 @@
       "url": "https://github.com/mees/calvin",
       "source_type": "official_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S35",
@@ -328,8 +399,10 @@
       "url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge26.html",
       "source_type": "official_organizer_page",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S36",
@@ -337,8 +410,10 @@
       "url": "https://people.cs.gmu.edu/~xiao/Research/BARN/BARN.html",
       "source_type": "official_dataset_page",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S37",
@@ -346,8 +421,10 @@
       "url": "https://arxiv.org/abs/2008.13315",
       "source_type": "original_paper",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S38",
@@ -355,8 +432,10 @@
       "url": "https://people.cs.gmu.edu/~xiao/papers/barn26_report.pdf",
       "source_type": "official_report",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S39",
@@ -364,8 +443,10 @@
       "url": "https://github.com/Saadmaghani/The-Barn-Challenge-Ros2",
       "source_type": "organizer_linked_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     },
     {
       "source_id": "S40",
@@ -373,8 +454,10 @@
       "url": "https://github.com/Daffan/the-barn-challenge",
       "source_type": "organizer_linked_repository",
       "prior_retrieved_on": "2026-08-20",
-      "review_retrieval_state": "pending_retrieval",
-      "reviewed_at": null
+      "review_retrieval_state": "retrieved",
+      "retrieval_outcome": null,
+      "retrieval_note": null,
+      "reviewed_at": "2026-08-25T16:45:00Z"
     }
   ],
   "claims": [
@@ -440,12 +523,12 @@
         },
         {
           "source_id": "S05",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 16-18",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -458,12 +541,12 @@
       "bindings": [
         {
           "source_id": "S05",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 17-18",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -476,9 +559,9 @@
       "bindings": [
         {
           "source_id": "S05",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract line 19 (forward-transfer result only; NBT and AUC remain unlocated)",
+          "support_type": "context"
         }
       ],
       "review_state": "pending_source_locator",
@@ -494,18 +577,18 @@
       "bindings": [
         {
           "source_id": "S07",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "official project page lines 18-30",
+          "support_type": "supports"
         },
         {
           "source_id": "S08",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 16-18",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -518,9 +601,9 @@
       "bindings": [
         {
           "source_id": "S08",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper page 4, extracted lines 279-300 (sparse +1 on completion; aggregation remains unlocated)",
+          "support_type": "context"
         },
         {
           "source_id": "S09",
@@ -548,12 +631,12 @@
         },
         {
           "source_id": "S11",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 1-2, extracted lines 80-112",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -566,9 +649,9 @@
       "bindings": [
         {
           "source_id": "S12",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "repository README lines 185-194 (multiple benchmark-category axes)",
+          "support_type": "context"
         },
         {
           "source_id": "S13",
@@ -602,12 +685,12 @@
         },
         {
           "source_id": "S16",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv title and abstract lines 9-16",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -656,18 +739,18 @@
       "bindings": [
         {
           "source_id": "S19",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "official project page lines 40-55",
+          "support_type": "supports"
         },
         {
           "source_id": "S20",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper page 1, extracted lines 8-32, and page 2, lines 120-135",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -680,18 +763,18 @@
       "bindings": [
         {
           "source_id": "S20",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper PointGoal protocol, page 6, extracted lines 394-400 and page 7, lines 525-528",
+          "support_type": "supports"
         },
         {
           "source_id": "S21",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "repository README lines 193-202 (task definitions use standard metrics)",
+          "support_type": "context"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -710,24 +793,24 @@
         },
         {
           "source_id": "S25",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 14-17",
+          "support_type": "supports"
         },
         {
           "source_id": "S26",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "ManiSkill2 arXiv abstract lines 15-18 (generation context)",
+          "support_type": "context"
         },
         {
           "source_id": "S27",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "repository README lines 228-241 (version-specific ManiSkill3 and ManiSkill2 citations)",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -740,9 +823,9 @@
       "bindings": [
         {
           "source_id": "S25",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 14-17 (12 domains and demonstration frames; >20 embodiments remains unlocated)",
+          "support_type": "context"
         }
       ],
       "review_state": "pending_source_locator",
@@ -758,24 +841,30 @@
       "bindings": [
         {
           "source_id": "S28",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "official documentation lines 36-47 (50 tasks only)",
+          "support_type": "context"
         },
         {
           "source_id": "S29",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 4-6, extracted lines 264-290 and 335-339",
+          "support_type": "context"
         },
         {
           "source_id": "S30",
           "locator_type": null,
           "locator_value": null,
           "support_type": "pending_review"
+        },
+        {
+          "source_id": "S31",
+          "locator_type": "line_range",
+          "locator_value": "repository README lines 179-211",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -794,9 +883,9 @@
         },
         {
           "source_id": "S29",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 7 and 13, extracted lines 377-395, 420-423, and 663-673 (success aggregation and return context; binary semantics remain unlocated)",
+          "support_type": "context"
         }
       ],
       "review_state": "pending_source_locator",
@@ -812,12 +901,12 @@
       "bindings": [
         {
           "source_id": "S33",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 2-7, extracted lines 63-95, 143-146, 281-295, 391-405, and 623-644",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -836,9 +925,9 @@
         },
         {
           "source_id": "S34",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "repository changelog lines 397-419 (prior dataset corrections and checksum update); launch-day availability still required",
+          "support_type": "context"
         }
       ],
       "review_state": "pending_source_locator",
@@ -854,24 +943,24 @@
       "bindings": [
         {
           "source_id": "S35",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "official challenge page lines 29-49",
+          "support_type": "supports"
         },
         {
           "source_id": "S36",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "official dataset page lines 13-23",
+          "support_type": "supports"
         },
         {
           "source_id": "S38",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "official report pages 1-2, extracted lines 31-70",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
@@ -884,18 +973,18 @@
       "bindings": [
         {
           "source_id": "S35",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "line_range",
+          "locator_value": "official challenge page lines 39-49",
+          "support_type": "supports"
         },
         {
           "source_id": "S38",
-          "locator_type": null,
-          "locator_value": null,
-          "support_type": "pending_review"
+          "locator_type": "pdf_line_range",
+          "locator_value": "official report page 2, extracted lines 92-132, and page 3, lines 213-233",
+          "support_type": "supports"
         }
       ],
-      "review_state": "pending_source_locator",
+      "review_state": "review_candidate",
       "evidence_state": "proposed",
       "reviewer": null,
       "reviewed_at": null
