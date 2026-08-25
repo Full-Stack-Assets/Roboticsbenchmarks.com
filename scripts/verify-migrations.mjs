@@ -6,7 +6,7 @@ const files = (await readdir(new URL("../drizzle/", import.meta.url))).filter((n
 assert.ok(files.length > 0, "at least one deterministic migration is required");
 const sql = await readFile(new URL(`../drizzle/${files.at(-1)}`, import.meta.url), "utf8");
 for (const table of ["benchmarks", "evidence_claims", "entity_revisions", "revision_field_values", "material_field_manifests", "audit_events"]) assert.ok(sql.includes(`CREATE TABLE \`${table}\``), `migration missing ${table}`);
-for (const trigger of ["entity_revisions_immutable_update", "entity_revisions_immutable_delete", "audit_events_append_only_update", "audit_events_append_only_delete"]) assert.match(sql, new RegExp(trigger), `migration missing ${trigger}`);
+for (const trigger of ["entity_revisions_immutable_update", "entity_revisions_immutable_delete", "evidence_claim_acceptance_guard_insert", "evidence_claim_acceptance_guard_update", "audit_events_append_only_update", "audit_events_append_only_delete"]) assert.match(sql, new RegExp(trigger), `migration missing ${trigger}`);
 const database = new DatabaseSync(":memory:");
 database.exec("PRAGMA foreign_keys = ON");
 for (const statement of sql.split("--> statement-breakpoint").map((part) => part.trim()).filter(Boolean)) database.exec(statement);

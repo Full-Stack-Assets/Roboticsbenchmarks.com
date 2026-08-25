@@ -501,6 +501,32 @@ BEGIN
   SELECT RAISE(ABORT, 'source snapshots are immutable');
 END;
 --> statement-breakpoint
+CREATE TRIGGER `evidence_claim_acceptance_guard_insert`
+BEFORE INSERT ON `evidence_claims`
+WHEN NEW.`evidence_state` = 'accepted'
+BEGIN
+  SELECT CASE WHEN NOT EXISTS (
+    SELECT 1 FROM `claim_sources` cs
+    JOIN `source_snapshots` ss ON ss.`source_id` = cs.`source_id`
+    WHERE cs.`claim_id` = NEW.`id`
+      AND cs.`support_type` = 'supports'
+      AND length(trim(cs.`locator_value`)) > 0
+  ) THEN RAISE(ABORT, 'accepted claims require a supporting source, locator, and snapshot') END;
+END;
+--> statement-breakpoint
+CREATE TRIGGER `evidence_claim_acceptance_guard_update`
+BEFORE UPDATE OF `evidence_state` ON `evidence_claims`
+WHEN NEW.`evidence_state` = 'accepted'
+BEGIN
+  SELECT CASE WHEN NOT EXISTS (
+    SELECT 1 FROM `claim_sources` cs
+    JOIN `source_snapshots` ss ON ss.`source_id` = cs.`source_id`
+    WHERE cs.`claim_id` = NEW.`id`
+      AND cs.`support_type` = 'supports'
+      AND length(trim(cs.`locator_value`)) > 0
+  ) THEN RAISE(ABORT, 'accepted claims require a supporting source, locator, and snapshot') END;
+END;
+--> statement-breakpoint
 CREATE TRIGGER `audit_events_append_only_update`
 BEFORE UPDATE ON `audit_events`
 BEGIN
