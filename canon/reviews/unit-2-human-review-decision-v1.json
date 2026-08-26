@@ -1,0 +1,48 @@
+{
+  "schema_id": "roboticsbenchmarks.human-review-decision/v1",
+  "decision_id": "RB-U2-01-HA-2026-08-26",
+  "work_item_id": "RB-U2-01",
+  "decided_at": "2026-08-26T05:35:05Z",
+  "reviewer": {
+    "id": "human_authority:nic",
+    "display_name": "Nic",
+    "authority": "Human Authority"
+  },
+  "directive": "accept these 22 claims",
+  "packet": {
+    "path": "canon/reviews/unit-2-human-review-packet-v1.json",
+    "sha256": "7534e8c065f26d341993d225b2a220c51ea3843f33e8003dc363cc531b9fcd90"
+  },
+  "decision": "accept_all",
+  "claim_count": 22,
+  "accepted_claim_ids": [
+    "claim:open-x-embodiment:identity",
+    "claim:open-x-embodiment:scope",
+    "claim:libero:identity",
+    "claim:libero:scope",
+    "claim:libero:metrics",
+    "claim:rlbench:scope",
+    "claim:rlbench:metric",
+    "claim:robotperf:identity",
+    "claim:robotperf:metric_model",
+    "claim:robochallenge-table30:identity",
+    "claim:robochallenge-table30:scope",
+    "claim:robochallenge-table30:metrics",
+    "claim:habitat:identity",
+    "claim:habitat:metric_model",
+    "claim:maniskill-3:identity",
+    "claim:maniskill-3:scope",
+    "claim:meta-world:scope",
+    "claim:meta-world:metric",
+    "claim:calvin:scope",
+    "claim:calvin:health_state",
+    "claim:barn-challenge-2026:scope",
+    "claim:barn-challenge-2026:metric"
+  ],
+  "scope": {
+    "claim_acceptance_authorized": true,
+    "merge_authorized": false,
+    "publication_authorized": false,
+    "production_write_authorized": false
+  }
+}

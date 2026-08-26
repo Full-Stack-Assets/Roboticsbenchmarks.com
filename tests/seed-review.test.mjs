@@ -9,6 +9,12 @@ const calvinManifest = await readFile(new URL("../canon/reviews/snapshots/calvin
 const humanPacketBytes = await readFile(new URL("../canon/reviews/unit-2-human-review-packet-v1.json", import.meta.url));
 const humanPacket = JSON.parse(humanPacketBytes);
 const humanPacketChecksum = await readFile(new URL("../canon/reviews/unit-2-human-review-packet-v1.json.sha256", import.meta.url), "utf8");
+const humanDecisionBytes = await readFile(new URL("../canon/reviews/unit-2-human-review-decision-v1.json", import.meta.url));
+const humanDecision = JSON.parse(humanDecisionBytes);
+const humanDecisionChecksum = await readFile(new URL("../canon/reviews/unit-2-human-review-decision-v1.json.sha256", import.meta.url), "utf8");
+const acceptedManifestBytes = await readFile(new URL("../canon/reviews/unit-2-accepted-claims-v1.json", import.meta.url));
+const acceptedManifest = JSON.parse(acceptedManifestBytes);
+const acceptedManifestChecksum = await readFile(new URL("../canon/reviews/unit-2-accepted-claims-v1.json.sha256", import.meta.url), "utf8");
 
 test("Unit 2 review ledger covers the complete seed without publishing", () => {
   assert.equal(review.summary.records, 10);
@@ -75,4 +81,24 @@ test("human review packet is complete, payload-bound, and grants no authority", 
   assert.ok(humanPacket.claims.every((claim) => claim.decision === "pending_human_review" && claim.reviewer === null && claim.reviewed_at === null));
   assert.equal(humanPacket.posture.publication_authorized, false);
   assert.equal(humanPacket.posture.merge_authorized, false);
+});
+
+test("human decision accepts exactly the packet claims without granting publication", () => {
+  const packetChecksum = createHash("sha256").update(humanPacketBytes).digest("hex");
+  const decisionChecksum = createHash("sha256").update(humanDecisionBytes).digest("hex");
+  const manifestChecksum = createHash("sha256").update(acceptedManifestBytes).digest("hex");
+  assert.equal(packetChecksum, "7534e8c065f26d341993d225b2a220c51ea3843f33e8003dc363cc531b9fcd90");
+  assert.equal(humanDecision.packet.sha256, packetChecksum);
+  assert.equal(humanDecisionChecksum.trim().split(/\s+/)[0], decisionChecksum);
+  assert.equal(acceptedManifest.decision_receipt.sha256, decisionChecksum);
+  assert.equal(acceptedManifestChecksum.trim().split(/\s+/)[0], manifestChecksum);
+  assert.deepEqual(humanDecision.accepted_claim_ids, humanPacket.claims.map((claim) => claim.claim_id));
+  assert.equal(acceptedManifest.summary.accepted_claims, 22);
+  assert.equal(acceptedManifest.claims.length, 22);
+  assert.ok(acceptedManifest.claims.every((claim) => claim.evidence_state === "accepted"));
+  assert.ok(acceptedManifest.claims.every((claim) => claim.reviewer.id === "human_authority:nic" && claim.reviewed_at === humanDecision.decided_at));
+  assert.ok(acceptedManifest.claims.every((claim) => claim.supporting_bindings.length > 0));
+  assert.equal(acceptedManifest.posture.merge_authorized, false);
+  assert.equal(acceptedManifest.posture.publication_authorized, false);
+  assert.equal(acceptedManifest.posture.production_write_authorized, false);
 });

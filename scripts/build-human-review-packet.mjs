@@ -6,6 +6,28 @@ const reviewUrl = new URL("canon/reviews/unit-2-seed-review-v1.json", root);
 const reviewBytes = await readFile(reviewUrl);
 const review = JSON.parse(reviewBytes);
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
+const packetName = "unit-2-human-review-packet-v1.json";
+const packetUrl = new URL(`canon/reviews/${packetName}`, root);
+const packetChecksumUrl = new URL(`canon/reviews/${packetName}.sha256`, root);
+const decisionUrl = new URL("canon/reviews/unit-2-human-review-decision-v1.json", root);
+
+let immutableDecision;
+try {
+  immutableDecision = JSON.parse(await readFile(decisionUrl, "utf8"));
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+
+if (immutableDecision) {
+  const packetBytes = await readFile(packetUrl);
+  const packetChecksum = (await readFile(packetChecksumUrl, "utf8")).trim().split(/\s+/)[0];
+  const actualChecksum = sha256(packetBytes);
+  if (actualChecksum !== packetChecksum || actualChecksum !== immutableDecision.packet.sha256) {
+    throw new Error("Refusing to rewrite a human review packet after a bound decision exists");
+  }
+  console.log(`Preserved immutable ${packetName} (${actualChecksum})`);
+  process.exit(0);
+}
 
 const packet = {
   schema_id: "roboticsbenchmarks.human-review-packet/v1",
@@ -32,6 +54,5 @@ const packet = {
 };
 
 const packetText = `${JSON.stringify(packet, null, 2)}\n`;
-const packetName = "unit-2-human-review-packet-v1.json";
-await writeFile(new URL(`canon/reviews/${packetName}`, root), packetText);
-await writeFile(new URL(`canon/reviews/${packetName}.sha256`, root), `${sha256(packetText)}  ${packetName}\n`);
+await writeFile(packetUrl, packetText);
+await writeFile(packetChecksumUrl, `${sha256(packetText)}  ${packetName}\n`);
