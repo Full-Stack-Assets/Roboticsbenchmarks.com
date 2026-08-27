@@ -18,7 +18,8 @@
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
     "db:check": "node scripts/verify-migrations.mjs",
-    "review:seed": "node scripts/build-seed-review.mjs"
+    "review:seed": "node scripts/build-seed-review.mjs && node scripts/build-human-review-packet.mjs",
+    "review:accept": "node scripts/build-accepted-claims.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

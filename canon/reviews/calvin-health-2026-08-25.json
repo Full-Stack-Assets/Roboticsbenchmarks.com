@@ -1,0 +1,74 @@
+{
+  "schema_id": "roboticsbenchmarks.source-health-receipt/v1",
+  "checked_at": "2026-08-25T21:12:27Z",
+  "entity_slug": "calvin",
+  "project_endpoint": {
+    "url": "http://calvin.cs.uni-freiburg.de/",
+    "status": 200,
+    "content_length": 42090,
+    "etag": "a46a-63e4686b21ffd",
+    "last_modified": "Mon, 08 Sep 2025 09:08:08 GMT"
+  },
+  "https_observation": {
+    "url": "https://calvin.cs.uni-freiburg.de/",
+    "status": 502,
+    "server": "mitmproxy 12.2.3",
+    "classification": "reviewer_proxy_failure_not_origin_health"
+  },
+  "checksum_manifest": {
+    "url": "http://calvin.cs.uni-freiburg.de/dataset/sha256sum.txt",
+    "status": 200,
+    "content_length": 333,
+    "etag": "14d-5f56ed30b24f6",
+    "last_modified": "Fri, 24 Feb 2023 09:33:39 GMT",
+    "snapshot_sha256": "049e80a3d75a10f511827b9d56b1daf28fdfa6c6c026e80daced2b454085dd53",
+    "snapshot_path": "canon/reviews/snapshots/calvin-sha256sum-2026-08-25.txt"
+  },
+  "archive_endpoints": [
+    {
+      "file_name": "task_D_D.zip",
+      "status": 200,
+      "content_length": 177379436142,
+      "etag": "294ca3666e-5f5610261d19b",
+      "last_modified": "Thu, 23 Feb 2023 17:04:44 GMT",
+      "manifest_sha256": "45efc2fb24a09a50ab3ed6cdc7637604ee857d3ba1bab23d63925c2d71e79d4f"
+    },
+    {
+      "file_name": "task_ABC_D.zip",
+      "status": 200,
+      "content_length": 555309812705,
+      "etag": "814b0b4be1-5e8bad7e824c0",
+      "last_modified": "Thu, 15 Sep 2022 17:47:47 GMT",
+      "manifest_sha256": "c2036c67eb4c06966af1d1e1665bdb572c69e1404f5e77ffd46b384ff2b79f74"
+    },
+    {
+      "file_name": "task_ABCD_D.zip",
+      "status": 200,
+      "content_length": 704022347117,
+      "etag": "a3eb007d6d-5e8b96d2656f3",
+      "last_modified": "Thu, 15 Sep 2022 16:06:21 GMT",
+      "manifest_sha256": "741c120b2340f07ca4b8141509d8a49bd58491d9ef312575bee505c9930695b0"
+    },
+    {
+      "file_name": "calvin_debug_dataset.zip",
+      "status": 200,
+      "content_length": 1299150917,
+      "etag": "4d6f7845-5dee4bc6ca437",
+      "last_modified": "Fri, 13 May 2022 13:34:38 GMT",
+      "manifest_sha256": "c66d09147e2c806b244f18ea7d61e388d4dac11f828929779437f728d03e1204"
+    }
+  ],
+  "verification": {
+    "project_http_available": true,
+    "checksum_manifest_available": true,
+    "manifest_lists_all_declared_archives": true,
+    "archive_head_requests_succeeded": true,
+    "full_archive_checksums_recomputed": false,
+    "reason_full_hashes_not_recomputed": "The declared archives total approximately 1.44 TB; this receipt verifies origin availability and the official manifest without downloading the datasets."
+  },
+  "posture": {
+    "claim_acceptance_authorized": false,
+    "publication_authorized": false,
+    "launch_day_recheck_required": true
+  }
+}

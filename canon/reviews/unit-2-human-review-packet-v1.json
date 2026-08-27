@@ -1,0 +1,452 @@
+{
+  "schema_id": "roboticsbenchmarks.human-review-packet/v1",
+  "generated_at": "2026-08-25T21:30:00Z",
+  "work_item_id": "RB-U2-01",
+  "source_review_sha256": "f9a8e2267a70e1425f98364987da7ab6ec5cfdf61ced79270c1329115d86ebae",
+  "decision_scope": "Accept, reject, or defer each proposed claim and its exact supporting locator; this packet grants no publication or merge authority.",
+  "posture": {
+    "all_decisions_pending": true,
+    "publication_authorized": false,
+    "merge_authorized": false
+  },
+  "claims": [
+    {
+      "claim_id": "claim:open-x-embodiment:identity",
+      "entity_slug": "open-x-embodiment",
+      "field_path": "identity",
+      "value": "Dataset/resource and cross-embodiment research ecosystem, not a single benchmark.",
+      "supporting_bindings": [
+        {
+          "source_id": "S01",
+          "locator_type": "line_range",
+          "locator_value": "project page lines 19-22 and 34-48",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S02",
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 21-27",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:open-x-embodiment:scope",
+      "entity_slug": "open-x-embodiment",
+      "field_path": "scope",
+      "value": "Official materials describe more than one million real-robot trajectories across 22 embodiments, pooled from 60 datasets and 34 labs.",
+      "supporting_bindings": [
+        {
+          "source_id": "S01",
+          "locator_type": "line_range",
+          "locator_value": "project page lines 34-41",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:libero:identity",
+      "entity_slug": "libero",
+      "field_path": "identity",
+      "value": "Lifelong robot-learning benchmark for knowledge transfer.",
+      "supporting_bindings": [
+        {
+          "source_id": "S05",
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 16-18",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:libero:scope",
+      "entity_slug": "libero",
+      "field_path": "scope",
+      "value": "Four suites and 130 tasks: LIBERO-Spatial, LIBERO-Object, LIBERO-Goal, and LIBERO-100.",
+      "supporting_bindings": [
+        {
+          "source_id": "S05",
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 17-18",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:libero:metrics",
+      "entity_slug": "libero",
+      "field_path": "metrics",
+      "value": "Forward Transfer, Negative Backward Transfer, and area under the success-learning sequence under the declared lifelong-learning protocol.",
+      "supporting_bindings": [
+        {
+          "source_id": "S05",
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source content/experiment.tex lines 15-28 (FWT, NBT, and AUC definitions and aggregation)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:rlbench:scope",
+      "entity_slug": "rlbench",
+      "field_path": "scope",
+      "value": "Official materials describe 100 hand-designed tasks with variations, motion-planned demonstrations, and multimodal observations.",
+      "supporting_bindings": [
+        {
+          "source_id": "S07",
+          "locator_type": "line_range",
+          "locator_value": "official project page lines 18-30",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S08",
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 16-18",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:rlbench:metric",
+      "entity_slug": "rlbench",
+      "field_path": "metric",
+      "value": "Each task exposes sparse completion reward: +1 only when the task is completed.",
+      "supporting_bindings": [
+        {
+          "source_id": "S08",
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper page 4, extracted lines 279-300 (each task has sparse reward of +1 only on completion)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:robotperf:identity",
+      "entity_slug": "robotperf",
+      "field_path": "identity",
+      "value": "Open reference robotics-computing benchmark suite using ROS 2 as a common baseline.",
+      "supporting_bindings": [
+        {
+          "source_id": "S11",
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 1-2, extracted lines 80-112",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:robotperf:metric_model",
+      "entity_slug": "robotperf",
+      "field_path": "metric_model",
+      "value": "Benchmark results record workload-scoped metrics such as latency, throughput, and power.",
+      "supporting_bindings": [
+        {
+          "source_id": "S12",
+          "locator_type": "line_range",
+          "locator_value": "repository benchmarks/README.md lines 152-166 and 223 (workload-level latency, throughput, power, and other recorded metrics)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:robochallenge-table30:identity",
+      "entity_slug": "robochallenge-table30",
+      "field_path": "identity",
+      "value": "RoboChallenge.ai is the platform; Table30 is the real-robot benchmark suite.",
+      "supporting_bindings": [
+        {
+          "source_id": "S16",
+          "locator_type": "line_range",
+          "locator_value": "arXiv title and abstract lines 9-16",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:robochallenge-table30:scope",
+      "entity_slug": "robochallenge-table30",
+      "field_path": "scope",
+      "value": "The original paper describes 30 tabletop tasks and a fleet of ten robots across four robot types.",
+      "supporting_bindings": [
+        {
+          "source_id": "S16",
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source _main.tex lines 38-52 (ten machines, four robot types, and 30 fixed-table tasks/Table30)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:robochallenge-table30:metrics",
+      "entity_slug": "robochallenge-table30",
+      "field_path": "metrics",
+      "value": "The original protocol defines end-to-end task success and a staged progress score.",
+      "supporting_bindings": [
+        {
+          "source_id": "S16",
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source _main.tex lines 326-345 (end-to-end success and staged progress scoring)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:habitat:identity",
+      "entity_slug": "habitat",
+      "field_path": "identity",
+      "value": "Habitat is a simulation platform and ecosystem rather than one benchmark.",
+      "supporting_bindings": [
+        {
+          "source_id": "S19",
+          "locator_type": "line_range",
+          "locator_value": "official project page lines 40-55",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S20",
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper page 1, extracted lines 8-32, and page 2, lines 120-135",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:habitat:metric_model",
+      "entity_slug": "habitat",
+      "field_path": "metric_model",
+      "value": "Metrics such as Success and SPL belong to named child navigation protocols, not to Habitat globally.",
+      "supporting_bindings": [
+        {
+          "source_id": "S20",
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper PointGoal protocol, page 6, extracted lines 394-400 and page 7, lines 525-528",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:maniskill-3:identity",
+      "entity_slug": "maniskill-3",
+      "field_path": "identity",
+      "value": "ManiSkill 3 is the current simulation/training framework and benchmark ecosystem; earlier generations are materially distinct.",
+      "supporting_bindings": [
+        {
+          "source_id": "S25",
+          "locator_type": "line_range",
+          "locator_value": "arXiv abstract lines 14-17",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S27",
+          "locator_type": "line_range",
+          "locator_value": "repository README lines 228-241 (version-specific ManiSkill3 and ManiSkill2 citations)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:maniskill-3:scope",
+      "entity_slug": "maniskill-3",
+      "field_path": "scope",
+      "value": "The current paper reports 12 task domains, more than 20 robot embodiments, and large demonstration corpora.",
+      "supporting_bindings": [
+        {
+          "source_id": "S25",
+          "locator_type": "source_line_range",
+          "locator_value": "arXiv TeX source paper_template.tex line 54 and sections/intro.tex line 12 (12 domains, 20+ embodiments, and millions of demonstration frames)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:meta-world:scope",
+      "entity_slug": "meta-world",
+      "field_path": "scope",
+      "value": "Current official materials expose 50 tasks with MT1, MT10, MT50, ML1, ML10, and ML45 protocols.",
+      "supporting_bindings": [
+        {
+          "source_id": "S31",
+          "locator_type": "line_range",
+          "locator_value": "repository README lines 179-211",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:meta-world:metric",
+      "entity_slug": "meta-world",
+      "field_path": "metric",
+      "value": "Success rate is averaged across tasks under the declared MT or ML evaluation protocol.",
+      "supporting_bindings": [
+        {
+          "source_id": "S29",
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 7 and 13, extracted lines 377-395 and 663-673 (success rate averaged across tasks under MT and ML protocols)",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:calvin:scope",
+      "entity_slug": "calvin",
+      "field_path": "scope",
+      "value": "Official materials describe 34 tasks across environments A-D, approximately 24 hours of teleoperated play, approximately 2.4 million interaction steps, and 1,000 five-instruction evaluation chains.",
+      "supporting_bindings": [
+        {
+          "source_id": "S33",
+          "locator_type": "pdf_line_range",
+          "locator_value": "paper pages 2-7, extracted lines 63-95, 143-146, 281-295, 391-405, and 623-644",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:calvin:health_state",
+      "entity_slug": "calvin",
+      "field_path": "health_state",
+      "value": "The official HTTP project and dataset endpoints responded successfully on 2026-08-25, and the official manifest lists SHA-256 hashes for all four declared archives.",
+      "supporting_bindings": [
+        {
+          "source_id": "S32",
+          "locator_type": "health_receipt",
+          "locator_value": "canon/reviews/calvin-health-2026-08-25.json project_endpoint, checksum_manifest, and archive_endpoints; manifest snapshot at canon/reviews/snapshots/calvin-sha256sum-2026-08-25.txt lines 1-4",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:barn-challenge-2026:scope",
+      "entity_slug": "barn-challenge-2026",
+      "field_path": "scope",
+      "value": "BARN provides 300 generated 5 m by 5 m environments; the 2026 challenge used 50 hidden simulation environments and physical finals with a Clearpath Jackal.",
+      "supporting_bindings": [
+        {
+          "source_id": "S35",
+          "locator_type": "line_range",
+          "locator_value": "official challenge page lines 29-49",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S36",
+          "locator_type": "line_range",
+          "locator_value": "official dataset page lines 13-23",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S38",
+          "locator_type": "pdf_line_range",
+          "locator_value": "official report pages 1-2, extracted lines 31-70",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    },
+    {
+      "claim_id": "claim:barn-challenge-2026:metric",
+      "entity_slug": "barn-challenge-2026",
+      "field_path": "metric",
+      "value": "The simulation trial score uses a success indicator and time normalization under year-specific constants; physical-final success and traversal time remain separate.",
+      "supporting_bindings": [
+        {
+          "source_id": "S35",
+          "locator_type": "line_range",
+          "locator_value": "official challenge page lines 39-49",
+          "support_type": "supports"
+        },
+        {
+          "source_id": "S38",
+          "locator_type": "pdf_line_range",
+          "locator_value": "official report page 2, extracted lines 92-132, and page 3, lines 213-233",
+          "support_type": "supports"
+        }
+      ],
+      "decision": "pending_human_review",
+      "reviewer": null,
+      "reviewed_at": null,
+      "decision_note": null
+    }
+  ]
+}
