@@ -16,9 +16,9 @@ export default function Home() {
             <span>RoboticsBenchmarks</span>
           </Link>
           <nav aria-label="Primary navigation">
-            <Link href="/benchmarks">Benchmarks</Link><Link href="/categories">Categories</Link><Link href="/how-to-choose">How to Choose</Link><Link href="/submit">Submit</Link><Link href="/about">About</Link>
+            <Link href="/benchmarks">Benchmarks</Link><Link href="/categories">Categories</Link><Link href="/how-to-choose">How to Choose</Link><Link href="/submit">Submit</Link><Link href="/evaluations">Evaluations</Link><Link href="/about">About</Link>
           </nav>
-          <Link className="button button-quiet header-cta" href="/alerts">Get alerts</Link>
+          <Link className="button button-quiet header-cta" href="/evaluations">Request an evaluation</Link>
         </div>
       </header>
 
@@ -29,7 +29,7 @@ export default function Home() {
               <p className="eyebrow">Independent · Source-backed · Protocol-aware</p>
               <h1>The independent index of robotics benchmarks</h1>
               <p className="lede">Compare simulation, real-robot, and compute benchmarks in one place. Every entry includes source links, a verification date, and confidence notes.</p>
-              <div className="action-row"><Link className="button button-primary" href="/benchmarks">Explore the benchmark registry</Link><Link className="button button-secondary" href="/alerts">Get curation alerts</Link></div>
+              <div className="action-row"><Link className="button button-primary" href="/evaluations">Request a robotics evaluation</Link><Link className="button button-secondary" href="/benchmarks">Explore the benchmark registry</Link></div>
               <div className="hero-proof" aria-label="Registry facts"><span><strong>{benchmarks.length}</strong> reviewed starters</span><span><strong>40</strong> primary sources</span><span><strong>0</strong> synthetic rankings</span></div>
             </div>
             <div className="signal-map" aria-label="Benchmark evaluation landscape">
@@ -37,6 +37,15 @@ export default function Home() {
               <div className="signal-node node-a"><i />Manipulation</div><div className="signal-node node-b"><i />Navigation</div><div className="signal-node node-c"><i />Locomotion</div><div className="signal-node node-d"><i />Compute</div>
               <div className="signal-line line-a" /><div className="signal-line line-b" /><div className="signal-line line-c" /><div className="signal-core"><span>Evidence</span><strong>Protocol</strong><small>Metric</small></div>
             </div>
+          </div>
+        </section>
+
+        <section className="section shell commercial-section" aria-labelledby="services-heading">
+          <div className="section-heading compact-heading"><p className="eyebrow">Evaluation services · Scope first</p><h2 id="services-heading">Make your next robotics decision evidence-led</h2><p className="commercial-intro">Benchmark discovery, capability assessments, and technical intelligence for robotics teams and buyers. Every engagement is scoped to the system, environment, and evidence available.</p></div>
+          <div className="service-grid">
+            <article className="service-card"><span className="card-index">01</span><h3>Benchmark discovery</h3><p>Map appropriate protocols to your robot class, task, and evaluation constraints.</p><Link className="text-link" href="/evaluations">Discuss a discovery scope →</Link></article>
+            <article className="service-card"><span className="card-index">02</span><h3>Capability assessment</h3><p>Define measurable evaluation criteria, traceable sources, and explicit limitations.</p><Link className="text-link" href="/evaluations">Request an assessment →</Link></article>
+            <article className="service-card"><span className="card-index">03</span><h3>Technical intelligence</h3><p>Translate vendor claims and research evidence into a decision-ready briefing.</p><Link className="text-link" href="/evaluations">Request a briefing →</Link></article>
           </div>
         </section>
 
@@ -62,7 +71,7 @@ export default function Home() {
         </section>
 
         <section className="trust-band"><div className="shell trust-grid"><p className="eyebrow">Methodology</p><p>Sources are official project pages, repositories, rules, and primary papers. Demo rows are labeled. No benchmark is ranked or endorsed.</p><p className="trust-date">Evidence cutoff<br/><strong>August 20, 2026</strong></p></div></section>
-        <section className="section shell final-cta"><p className="eyebrow">A better evaluation starts with scope</p><h2>Find the benchmark that matches your system—not the one with the loudest leaderboard.</h2><div className="action-row centered-actions"><Link className="button button-primary" href="/benchmarks">Open the registry</Link><Link className="button button-secondary" href="/how-to-choose">Read the selection guide</Link></div></section>
+        <section className="section shell final-cta"><p className="eyebrow">A better evaluation starts with scope</p><h2>Find the benchmark that matches your system—not the one with the loudest leaderboard.</h2><div className="action-row centered-actions"><Link className="button button-primary" href="/evaluations">Request an evaluation</Link><Link className="button button-secondary" href="/benchmarks">Open the registry</Link></div></section>
       </main>
 
       <footer className="site-footer"><div className="shell footer-grid">
